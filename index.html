@@ -486,6 +486,43 @@
                         </div>
                     </div>
                 </div>
+                <div id="brand">
+                    <div class="section-title">Brand Recommendations</div>
+                    <div id="brand-wrapper">
+                        <div class="brand-row">
+                            <div class="brand-img"><div></div></div>
+                            <div class="brand-img"><div></div></div>
+                            <div class="brand-img"><div></div></div>
+                            <div class="brand-img"><div></div></div>
+                            <div class="brand-img"><div></div></div>
+                            <div class="brand-img"><div></div></div>
+                        </div>
+                        <div class="brand-row">
+                            <div class="brand-img"><div></div></div>
+                            <div class="brand-img"><div></div></div>
+                            <div class="brand-img"><div></div></div>
+                            <div class="brand-img"><div></div></div>
+                            <div class="brand-img"><div></div></div>
+                            <div class="brand-img"><div></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="reco">
+                    <div class="section-title">Daily Recommendations</div>
+                    <div id="reco-wrapper">
+                        <div id="reco-left"></div>
+                        <div id="reco-right">
+                            <div id="reco-top">
+                                <div class="reco-item"></div>
+                                <div class="reco-item"></div>
+                            </div>
+                            <div id="reco-bottom">
+                                <div class="reco-item"></div>
+                                <div class="reco-item"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
 
@@ -533,7 +570,12 @@
             //bars[i].getElementsByTagName("div")[0].getElementsByTagName("ul")[0].style.display = "none";
 			bars[i].getElementsByTagName("div")[0].style.height = "510px";
         }	
+        
 
+        // show brands
+        var b = document.getElementById("brand-row");
+        var bs = b.getElementsByClassName("brand-img");
+        
     </script>
     <div id="footer-container">
         <div id="footer-wrapper">
