@@ -186,6 +186,7 @@ form {
     width: 100%;
     top: 85px;
     background-color: rgb(235, 235, 235);
+    overflow: hidden;
 }
 
 #main-wrap {    
@@ -193,27 +194,64 @@ form {
     flex-direction: column;
     align-items: center;
     min-width: 1280px;
-    height: 900px;
-}
-
-#main-bg {
-    position: absolute;
-    top: 0;
     width: 1280px;
-    max-width: 1280px;
+    overflow: hidden;
+    /* height: 900px; */
+
+}
+#bg-container {
+    position: relative;
+    width: 1280px;
     height: 570px;
-    background: linear-gradient( -180deg, rgba(255, 255, 255, 0.055),  rgba(255, 255, 255, 0.418), rgba(235, 235, 235, 0.74), rgb(235, 235, 235)), url(../images/bg.jpg);
+    /* overflow: hidden; */
+}
+#main-bg {
+    position: relative;
+    top: 0;
+    width: 3850px;
+    /* max-width: 1280px; */
+    height: 570px;
+    left: -1280px;
+    
+    
+}
+.slide {
+    position: relative;
+    display: inline-block;
+    width: 1280px;
+    height: 100%;
+    z-index: 0;
+   
     background-repeat: no-repeat;
     background-size: cover;
+}
+@keyframes toleft {
+    from {
+        left: 0;
+        opacity: 0.1;
+    }
+    to {
+        left: -1280px;
+        opacity: 1;
+    }
+}
+@keyframes toright {
+    from {
+        left: 0;
+        opacity: 0.1;
+    }
+    to {
+        left: 1280px;
+        opacity: 1;
+    }
 }
 #main-bg-indicator {
     position: relative;
     display: flex;
     flex-direction: row;
-    align-items: center;
-    
+    align-items: center;    
     width: 160px;
-    top: 340px;
+    top: -270px;
     margin: auto;
 }
 #main-bg-indicator > li {
@@ -257,7 +295,7 @@ div.indi:hover {
 }
 #main-wrapper {
     position: relative;
-    top: 350px;
+    top: -220px;
     width: calc(100% - 40px);
 }
 #left-container {
@@ -269,8 +307,12 @@ div.indi:hover {
     height: 510px;
     background-color: white;
     margin-left: 10px;
+    transition: box-shadow 0.3s;
 }
-
+#left-container:hover {
+    animation: container-appear 1s;
+    box-shadow: 4px 4px 1px 1px rgba(0,0,0,0.16);
+}
 #left-title {
     color: rgb(255, 156, 42);
     font-size: 20px;
@@ -297,10 +339,11 @@ div.indi:hover {
     font-weight: 600;
     line-height: 30px;
     padding-left: 40px;
-	z-index: 100;
+    z-index: 100;
+    transition: color 0.3s, background 0.3s;
 }
 #cate-l > li:hover {
-    animation: catel-la 0.3s;
+    /* animation: catel-la 0.3s; */
     color: #ffffff;
     background-color: rgb(255, 170, 42);
     cursor: pointer;
@@ -321,6 +364,10 @@ div.indi:hover {
 @keyframes subcate-appear {
 	from { box-shadow: 2px 0px 1px 1px rgba(0,0,0,0.16); opacity: 0.4;}
 	to { box-shadow: 4px 4px 1px 1px rgba(0,0,0,0.16); opacity: 1;}
+}
+@keyframes container-appear {
+    from { box-shadow: 2px 0px 1px 1px rgba(0,0,0,0.16);}
+	to { box-shadow: 4px 4px 1px 1px rgba(0,0,0,0.16);}
 }
 .sub-cate > ul {
 	padding-top: 50px;
@@ -373,20 +420,20 @@ div.indi:hover {
 	height: 25px;
 	padding-left: 5px;
 	padding-right: 5px;
-
+    transition: color 0.1s, background 0.5s;
 }
-.cate-detail-item > a {
+/* .cate-detail-item > a {
 	text-decoration: none;
 	color: #767676;
-}
+} */
 .cate-detail-item > a:hover {
 	color: white;
 	border-radius: 3px;
 	background-color: rgb(255, 170, 42);
     cursor: pointer;
-	font-weight: 600;
-	animation: la 0.5s;
-	font-size: 15px;
+	/* font-weight: 600; */
+	/* animation: la 0.5s; */
+	/* font-size: 15px; */
 	
 }
 #center-container {
@@ -400,8 +447,17 @@ div.indi:hover {
     background-image: url(../images/banner.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-
+    transition: box-shadow 1s;
 }
+#center-container:hover {
+    /* animation: container-appear 1s; */
+    box-shadow: 4px 4px 1px 1px rgba(0,0,0,0.16);
+}
+#right-container:hover {
+    /* animation: container-appear 1s; */
+    box-shadow: 4px 4px 1px 1px rgba(0,0,0,0.16);
+}
+
 #right-container {
     display: inline-block;
     float: right;
@@ -411,6 +467,7 @@ div.indi:hover {
     height: 510px;
     /* margin-left: 30px; */
     background-color: white;
+    transition: box-shadow 0.5s;
 }
 #ruser-info {
     display: flex;
