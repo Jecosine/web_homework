@@ -1,93 +1,271 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" href="css/style.css" />
-        <link rel="stylesheet" href="css/item.css" />
-        <link rel="stylesheet" href="css/font-awesome.min.css" />
-    </head>
-    <body>
-        <div id="navigation-container">
-            <div id="navigation-wrap">
-                <div id="icon-container"></div>
-                <div id="search-container">
-                    <div id="cate-container">
-                        <ul id="cate-list">
-                            <li></li>
-                        </ul>
-                    </div>
-                    <div id="search-bar-bg">
-                        <form action="banana.jsp" method="GET">
-                            <input id="search-bar" type="text" name="search" placeholder="Search..."/>
-                            <button id="submit-button" type="submit"><div>Search <i class="fa fa-search" aria-hidden="true"></i></div></button>
-                        </form>
-                    </div>
-                </div>
-                <a href="#" id="cart"><div><i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart</div></a>
-            </div>
-            <div id="sub-navi">
-                <div id="subnavi-g">
-                    <a class="subnavi-item" href="#">Best Sellers</a>
-                    <a class="subnavi-item" href="#">Ranks</a>
-                    <a class="subnavi-item" href="#">Recommendations</a>
-                    <a class="subnavi-item" href="#">New Releases</a>
-                    <a class="subnavi-item" href="#">Gift Cards</a>
-                </div>
-            </div>
+  <head>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/item.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+  </head>
+  <body>
+    <div id="navigation-container">
+      <div id="navigation-wrap">
+        <div id="icon-container"></div>
+        <div id="search-container">
+          <div id="cate-container">
+              <div>Search <i class="fa fa-search" aria-hidden="true"></i></div>
+            <!-- <ul id="cate-list">
+              <li></li>
+            </ul> -->
+          </div>
+          <div id="search-bar-bg">
+            <form action="banana.jsp" method="GET">
+              <input id="search-bar" type="text" name="search" placeholder="Search..."/>
+              <button id="submit-button" type="submit"><div>Search <i class="fa fa-search" aria-hidden="true"></i></div></button>
+            </form>
+          </div>
         </div>
-        <div id="main-container">
-            <div id="main-wrap">
-                <div id="main-bg"></div>
-                <div id="main-wrapper">
-                    <div class="item-container">
-                        <div class="item-wrap">
-                            <div class="item-cover"></div>
-                            <div class="item-info">
-                                <div class="item-upper">
-                                    <div class="item-title">C++ Primer Plus (6th ver.)</div>
-                                    <div class="item-seller"><a href="#"><i class="fa fa-newspaper-o" aria-hidden="true"></i>People post Press</a></div>
-                                    <div class="item-sells">200</div>
-                                </div>
-                                <div class="item-bottom">
-                                    <div class="item-price">￥69.84</div>
-                                    <div class="item-icons"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>                    
-                    
+        <a href="#" id="cart"><div><i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart</div></a>
+      </div>
+      <div id="sub-navi">
+        <div id="subnavi-g">
+          <a class="subnavi-item" href="#">Best Sellers</a>
+          <a class="subnavi-item" href="#">Ranks</a>
+          <a class="subnavi-item" href="#">Recommendations</a>
+          <a class="subnavi-item" href="#">New Releases</a>
+          <a class="subnavi-item" href="#">Gift Cards</a>
+        </div>
+      </div>
+    </div>
+    <div id="main-container">
+      <div id="main-wrap">       
+        <div id="main-wrapper">
+          <div id="filter"></div>
+          <div id="item-list">
+            <div class="item-container" title="Drag me to cart">
+              <div class="item-wrap" id="test" draggable="true">
+                <div class="item-cover"></div>
+                <div class="item-info">
+                  <div class="item-upper">
+                    <div class="item-title">C++ Primer Plus (6th ver.)</div>
+                    <div class="item-seller"><a href="#"><i class="fa fa-newspaper-o" aria-hidden="true"></i>People post Press</a></div>
+                    <div class="item-sells">200</div>
+                  </div>
+                  <div class="item-bottom">
+                    <div class="item-price">￥69.84</div>
+                    <div class="item-icons"></div>
+                  </div>
                 </div>
+              </div>
+              <div class="it-cart">
+                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+              </div>
+            </div> 
+            <div class="item-container">
+              <div class="item-wrap">
+                <div class="item-cover"></div>
+                <div class="item-info">
+                  <div class="item-upper">
+                    <div class="item-title">C++ Primer Plus (6th ver.)</div>
+                    <div class="item-seller"><a href="#"><i class="fa fa-newspaper-o" aria-hidden="true"></i>People post Press</a></div>
+                    <div class="item-sells">200</div>
+                  </div>
+                  <div class="item-bottom">
+                    <div class="item-price">￥69.84</div>
+                    <div class="item-icons"></div>
+                  </div>
+                </div>
+              </div>
+            </div> 
+            <div class="item-container">
+              <div class="item-wrap">
+                <div class="item-cover"></div>
+                <div class="item-info">
+                  <div class="item-upper">
+                    <div class="item-title">C++ Primer Plus (6th ver.)</div>
+                    <div class="item-seller"><a href="#"><i class="fa fa-newspaper-o" aria-hidden="true"></i>People post Press</a></div>
+                    <div class="item-sells">200</div>
+                  </div>
+                  <div class="item-bottom">
+                    <div class="item-price">￥69.84</div>
+                    <div class="item-icons"></div>
+                  </div>
+                </div>
+              </div>
             </div>
+            <div class="item-container">
+              <div class="item-wrap">
+                <div class="item-cover"></div>
+                <div class="item-info">
+                  <div class="item-upper">
+                    <div class="item-title">C++ Primer Plus (6th ver.)</div>
+                    <div class="item-seller"><a href="#"><i class="fa fa-newspaper-o" aria-hidden="true"></i>People post Press</a></div>
+                    <div class="item-sells">200</div>
+                  </div>
+                  <div class="item-bottom">
+                    <div class="item-price">￥69.84</div>
+                    <div class="item-icons"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item-container">
+                <div class="item-wrap">
+                    <div class="item-cover"></div>
+                    <div class="item-info">
+                    <div class="item-upper">
+                        <div class="item-title">C++ Primer Plus (6th ver.)</div>
+                        <div class="item-seller"><a href="#"><i class="fa fa-newspaper-o" aria-hidden="true"></i>People post Press</a></div>
+                        <div class="item-sells">200</div>
+                    </div>
+                    <div class="item-bottom">
+                        <div class="item-price">￥69.84</div>
+                        <div class="item-icons"></div>
+                    </div>
+                    </div>
+                </div>
+                </div> 
+            <div class="item-container">
+                <div class="item-wrap">
+                    <div class="item-cover"></div>
+                    <div class="item-info">
+                    <div class="item-upper">
+                        <div class="item-title">C++ Primer Plus (6th ver.)</div>
+                        <div class="item-seller"><a href="#"><i class="fa fa-newspaper-o" aria-hidden="true"></i>People post Press</a></div>
+                        <div class="item-sells">200</div>
+                    </div>
+                    <div class="item-bottom">
+                        <div class="item-price">￥69.84</div>
+                        <div class="item-icons"></div>
+                    </div>
+                    </div>
+                </div>
+                </div> 
+            <div class="item-container">
+                <div class="item-wrap">
+                    <div class="item-cover"></div>
+                    <div class="item-info">
+                    <div class="item-upper">
+                        <div class="item-title">C++ Primer Plus (6th ver.)</div>
+                        <div class="item-seller"><a href="#"><i class="fa fa-newspaper-o" aria-hidden="true"></i>People post Press</a></div>
+                        <div class="item-sells">200</div>
+                    </div>
+                    <div class="item-bottom">
+                        <div class="item-price">￥69.84</div>
+                        <div class="item-icons"></div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            <div class="item-container">
+                <div class="item-wrap">
+                    <div class="item-cover"></div>
+                    <div class="item-info">
+                    <div class="item-upper">
+                        <div class="item-title">C++ Primer Plus (6th ver.)</div>
+                        <div class="item-seller"><a href="#"><i class="fa fa-newspaper-o" aria-hidden="true"></i>People post Press</a></div>
+                        <div class="item-sells">200</div>
+                    </div>
+                    <div class="item-bottom">
+                        <div class="item-price">￥69.84</div>
+                        <div class="item-icons"></div>
+                    </div>
+                    </div>
+                </div>
+            </div>            
+          </div>
+                   
+          
+        </div>
+      </div>
 
 
+    </div>
+    <div id="footer-container">
+      <div id="footer-wrapper">
+        <div id="about-us" class="footer-col">
+          <div class="footer-title">About Us</div>
+          <ul class="footer-ul">
+            <li class="footer-li"><a href="#">Customer Service</a></li>
+            <li class="footer-li"><a href="#">Advanced Search</a></li>
+            <li class="footer-li"><a href="#">Order and Returns</a></li>
+            <li class="footer-li"><a href="#">Contact Us</a></li>
+          </ul>
+          
+        </div>
+        <div id="policy" class="footer-col">
+          <div class="footer-title">Policy</div>
+          <ul class="footer-ul">
+            <li class="footer-li"><a href="#">Privacy Policy</a></li>
+            <li class="footer-li"><a href="#">Site Map</a></li>
+            <li class="footer-li"><a href="#">Search Term</a></li>
+            <li class="footer-li"><a href="#">Customer Service</a></li>
+          </ul>
+          
+        </div>
+        <div id="account" class="footer-col">
+          <div class="footer-title">Account</div>
+          <ul class="footer-ul">
+            <li class="footer-li"><a href="#">Sign In</a></li>
+            <li class="footer-li"><a href="#">Sign Up</a></li>
+            <li class="footer-li"><a href="#">View Cart</a></li>
+            <li class="footer-li"><a href="#">Help</a></li>
+          </ul>
+          
+        </div>
+        <div id="contact" class="footer-col">
+          <div class="footer-title">Contact</div>
+          <ul class="footer-ul">
+            <li class="footer-li"><a href="#"><i class="fa fa-envelope yellow" aria-hidden="true"></i>  Email: jecosine@outlook.com</a></li>
+            <li class="footer-li"><a href="#"><a href="#"><i class="fa fa-phone yellow" aria-hidden="true"></i> Tele: 123-45678901</a></li>
+            <li class="footer-li"><a href="#">
+              <a href="#"><i class="fa fa-twitter yellow-l" aria-hidden="true"></i></a>
+              <a href="#"><i class="fa fa-skype yellow-l" aria-hidden="true"></i></a>
+              <a href="#"><i class="fa fa-facebook yellow-l" aria-hidden="true"></i></a>
+              <a href="#"><i class="fa fa-linkedin yellow-l" aria-hidden="true"></i></a>
+  
+            </li>
+            
+            
+          </ul>
         </div>
         
-    </body>
-    <script>
-        var hlist = document.getElementById("hcate").getElementsByTagName("ul");
-        var sublist = hlist.children;
-        var clist = document.getElementById("cate-l");
-        var bars = clist.children;
-        
-        function showSub(){
-            console.log(this);
-        }
+      </div>
+    </div>
+  </body>
+  <script>
+
+    var t = document.getElementById("test");
+    var c = t.parentElement.getElementsByClassName("it-cart")[0];
+    t.ondragstart=function(e){
+        console.log("start dragging");
+        console.log(e.offsetX, e.offsetY);       
+        c.style.display = "inline-block";
+        e.dataTransfer.setData("a",1);
+    }
+    t.ondragend=function(e){
+        console.log("dragging end");
+        c.style.display="none";
+    }
+    c.ondrop=function(e){
+        console.log("in real");
+        // e.preventDefault();
+        console.log(e.dataTransfer.getData("a"));
+    }
+    c.ondragenter=function(e){
+        console.log("entered");
+        this.style.opacity = 1;
+    }
+    t.ondragover=function(e){
+        e.preventDefault();
+        console.log("in over");
+    }
+    c.ondragover=function(e){
+        e.preventDefault();
+        // console.log("in over");
+    }
+    c.ondragleave=function(e){
+        this.style.opacity = 0.8;
+    }
     
-        for (var i = 0;i< 5; i++){
-            console.log(bars[i]);
-            bars[i].getElementsByTagName("div")[0].innerHTML = hlist[Number(bars[i].dataset["index"])].innerHTML;
-            bars[i].getElementsByTagName("div")[0].style.left = "9999px";
-            bars[i].getElementsByTagName("div")[0].style.display = "none";
-            bars[i].onmouseover = function(){
-                console.log(Number(this.dataset["index"]));
-                this.getElementsByTagName("div")[0].style.left = "240px";
-                this.getElementsByTagName("div")[0].style.display = "block";
-            }
-            bars[i].onmouseout = function(){
-                this.getElementsByTagName("div")[0].style.left = "9999px";
-                this.getElementsByTagName("div")[0].style.display = "none";
-            }
-        }
-
-    </script>
+  </script>
 
 </html>

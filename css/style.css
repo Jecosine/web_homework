@@ -37,9 +37,22 @@ body {
     display: inline-block;
     position: absolute;
     top: 0;
-    width: 950px;
+    width: 190px;
     height: 50px;
     margin-left: 100px;
+    overflow: hidden;
+    transition: width 0.5s;
+}
+#search-container:hover, #search-container:focus {
+    width: 950px;
+}
+#search-container:hover > #search-bar-bg,
+#search-container:focus > #search-bar-bg {
+    opacity: 1;
+
+}
+#search-container:hover > #cate-container > div {
+    opacity: 0;
 }
 #search-bar-bg {
     position: relative;
@@ -49,6 +62,8 @@ body {
     margin-left: 100px;
     background-color: white;
     z-index: 9;
+    opacity: 0;
+    transition: opacity 0.3s;
 }
 form {
     width: 990px;
@@ -115,6 +130,22 @@ form {
     transform: skewX(-25deg);
     z-index: 10;
 }
+#cate-container:hover {
+    cursor: pointer;
+}
+/* #cate-container:hover > div {
+    opacity: 0;
+} */
+#cate-container > div {
+    line-height: 50px;
+    height:50px;
+    font-size: 22px;
+    font-weight: bold;
+    transform: skewX(25deg);    
+    margin-left: 10px;
+    transition: opacity 0.3s;
+}
+
 #cart {
     display: inline-block;
     position: relative;
