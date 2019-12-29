@@ -160,6 +160,7 @@ form {
     font-style: none;
     text-decoration: none;
     text-align: center;
+    transition: background 1s;
 }
 #cart:hover {
     background-color: rgb(255, 215, 154);

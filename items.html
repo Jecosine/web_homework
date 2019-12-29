@@ -235,6 +235,7 @@
   <script>
     var itemslist = itemsdata['dt'];
     var pivot = document.getElementById("item-list");
+    var cart_dom = document.getElementById("cart");
     for(var i = 0; i < itemslist.length; i++){
         var t = document.createElement("div");
         t.innerHTML = '<div class="item-wrap" data-id="'+i+'" draggable="true">'+
@@ -260,34 +261,39 @@
         c.innerHTML = "<i class=\"fa fa-shopping-cart\" aria-hidden=\"true\"></i>";
         t.appendChild(c);
         pivot.appendChild(t);
-
+        
         var t = pivot.children[i];
         var c = t.getElementsByClassName("it-cart")[0];
         t.ondragstart=function(e){
-            console.log("start dragging");
-            console.log(e.offsetX, e.offsetY);       
+            // console.log("start dragging");
+            // console.log(e.offsetX, e.offsetY);       
             this.getElementsByClassName("it-cart")[0].style.display = "inline-block";
-            e.dataTransfer.setData("dt",this.dataset['id']);
+            var temp = this.getElementsByClassName("item-wrap")[0].dataset["id"];
+            e.dataTransfer.setData("dt",temp);
         }
         t.ondragend=function(e){
-            console.log("dragging end");
+            // console.log("dragging end");
             this.getElementsByClassName("it-cart")[0].style.display = "none";
         }
         c.ondrop=function(e){
             console.log("in real");
             // e.preventDefault();
-            var temp = JSON.parse(e.dataTransfer.getData("dt"));
+            var temp = e.dataTransfer.getData("dt");
             console.log(e.dataTransfer.getData("dt"));
             addtoCart(temp);
+            cart_dom.style.animation = "spike 1s";
+            setTimeout(()=>{
+                cart_dom.style.animation = "none";
+            }, 1000);
             
         }
         c.ondragenter=function(e){
-            console.log("entered");
+            // console.log("entered");
             this.style.opacity = 1;
         }
         t.ondragover=function(e){
             e.preventDefault();
-            console.log("in over");
+            // console.log("in over");
         }
         c.ondragover=function(e){
             e.preventDefault();
@@ -300,22 +306,38 @@
             // cart is empty or not
             var s = sessionStorage.getItem("cart");
             var amount = 1;
-            if (s == null){
+            if (s == null){     
+                s = {"items":[], "total": 0, "count": 1};     
+                var pattern = JSON.parse(JSON.stringify(itemslist[id]));
+                pattern['id'] = id;
+                pattern["amount"] = 1;
+                s['items'].push(pattern);      
+                sessionStorage.setItem("cart",JSON.stringify(s));
                 
-                amount = 1;
             } else {
                 s = JSON.parse(s);
+                var flag = false;
                 for(var i = 0; i < s["items"].length; i++){
                     if(s['items'][i]["id"] == id) {
                         s['items'][i]["amount"] += 1;
+                        s['total'] += parseFloat(s['items'][i]['price']);
+                        flag = true;
                     }
                 }
+                if (!flag){
+                    var pattern = JSON.parse(JSON.stringify(itemslist[id]));
+                    pattern['id'] = id;
+                    pattern["amount"] = 1;
+                    s["total"] += parseFloat(itemslist[id]["price"]);
+                    s['items'].push(pattern);
+                    
+
+                }
+                s["count"] += 1;
+                sessionStorage.setItem("cart",JSON.stringify(s));
             }
             
-            var pattern = JSON.parse(JSON.stringify(itemslist[id]));
-            pattern['id'] = id;
-
-            pattern["amount"] = 1;
+            
 
         }
         

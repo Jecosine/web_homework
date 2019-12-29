@@ -115,3 +115,14 @@ a {
     background-color: rgba(255, 244, 231, 0.842);
     border-radius: 50%;
 }
+@keyframes spike {
+    0% {
+        background-color: rgb(255, 170, 42);
+    }
+    50% {
+        background-color: rgb(255, 241, 219);
+    }
+    100% {
+        background-color: rgb(255, 170, 42);
+    }
+}
