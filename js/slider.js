@@ -12,7 +12,7 @@ window.onload = function() {
   // right img: 2
   // indices = indices.slice(1, indices.length-1);
   var cur = 0;
-  console.log(slides.length);
+  // console.log(slides.length);
   for (var i = 1; i <= 4; i++){
     indices[i].onclick = function(){
       if (cur != parseInt(this.dataset['index'])){
@@ -59,7 +59,7 @@ window.onload = function() {
   function slide(id) {
     
     id = parseInt(id);
-    console.log(parseIndex(id));
+    // console.log(parseIndex(id));
     // console.log(parseIndex(id+1).toString());
     // console.log("./images/slider/sl-"+parseIndex(id+1).toString()+".jpg)");
     if (id - cur > 0){

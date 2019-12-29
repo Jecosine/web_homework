@@ -4,11 +4,12 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/item.css" />
     <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <script type="text/javascript" src="items.js"></script>
   </head>
   <body>
     <div id="navigation-container">
       <div id="navigation-wrap">
-        <div id="icon-container"></div>
+        <a href="index.html" id="icon-container"></a>
         <div id="search-container">
           <div id="cate-container">
               <div>Search <i class="fa fa-search" aria-hidden="true"></i></div>
@@ -40,7 +41,7 @@
         <div id="main-wrapper">
           <div id="filter"></div>
           <div id="item-list">
-            <div class="item-container" title="Drag me to cart">
+            <!-- <div class="item-container" title="Drag me to cart">
               <div class="item-wrap" id="test" draggable="true">
                 <div class="item-cover"></div>
                 <div class="item-info">
@@ -170,7 +171,7 @@
                     </div>
                     </div>
                 </div>
-            </div>            
+            </div>             -->
           </div>
                    
           
@@ -232,39 +233,95 @@
     </div>
   </body>
   <script>
+    var itemslist = itemsdata['dt'];
+    var pivot = document.getElementById("item-list");
+    for(var i = 0; i < itemslist.length; i++){
+        var t = document.createElement("div");
+        t.innerHTML = '<div class="item-wrap" data-id="'+i+'" draggable="true">'+
+                '<div class="item-cover" style="background-image: url(./images/items/' + itemslist[i]['imurl']+')"></div>'+
+                '<div class="item-info">'+
+                  '<div class="item-upper">'+
+                    '<div class="item-title">'+ itemslist[i]['title'].slice(0,20) + '...</div>'+
+                    '<div class="item-seller"><a href="#"><i class="fa fa-newspaper-o" aria-hidden="true"></i>People post Press</a></div>'+
+                    '<div class="item-sells">' + Math.floor(Math.random()*200) +'</div>'+
+                  '</div>'+
+                  '<div class="item-bottom">'+
+                    '<div class="item-price">￥'+ itemslist[i]['price'] +'</div>'+
+                    '<div class="item-icons"></div>'+
+                  '</div>'+
+                '</div>'+
+              '</div>';
+        t.classList.add("item-container");
+        t.title = "Drag me to cart!";
+        // t.draggable = true;
+        // var t = document.getElementById("test");
+        var c = document.createElement("div");
+        c.classList.add("it-cart");
+        c.innerHTML = "<i class=\"fa fa-shopping-cart\" aria-hidden=\"true\"></i>";
+        t.appendChild(c);
+        pivot.appendChild(t);
 
-    var t = document.getElementById("test");
-    var c = t.parentElement.getElementsByClassName("it-cart")[0];
-    t.ondragstart=function(e){
-        console.log("start dragging");
-        console.log(e.offsetX, e.offsetY);       
-        c.style.display = "inline-block";
-        e.dataTransfer.setData("a",1);
-    }
-    t.ondragend=function(e){
-        console.log("dragging end");
-        c.style.display="none";
-    }
-    c.ondrop=function(e){
-        console.log("in real");
-        // e.preventDefault();
-        console.log(e.dataTransfer.getData("a"));
-    }
-    c.ondragenter=function(e){
-        console.log("entered");
-        this.style.opacity = 1;
-    }
-    t.ondragover=function(e){
-        e.preventDefault();
-        console.log("in over");
-    }
-    c.ondragover=function(e){
-        e.preventDefault();
-        // console.log("in over");
-    }
-    c.ondragleave=function(e){
-        this.style.opacity = 0.8;
-    }
+        var t = pivot.children[i];
+        var c = t.getElementsByClassName("it-cart")[0];
+        t.ondragstart=function(e){
+            console.log("start dragging");
+            console.log(e.offsetX, e.offsetY);       
+            this.getElementsByClassName("it-cart")[0].style.display = "inline-block";
+            e.dataTransfer.setData("dt",this.dataset['id']);
+        }
+        t.ondragend=function(e){
+            console.log("dragging end");
+            this.getElementsByClassName("it-cart")[0].style.display = "none";
+        }
+        c.ondrop=function(e){
+            console.log("in real");
+            // e.preventDefault();
+            var temp = JSON.parse(e.dataTransfer.getData("dt"));
+            console.log(e.dataTransfer.getData("dt"));
+            addtoCart(temp);
+            
+        }
+        c.ondragenter=function(e){
+            console.log("entered");
+            this.style.opacity = 1;
+        }
+        t.ondragover=function(e){
+            e.preventDefault();
+            console.log("in over");
+        }
+        c.ondragover=function(e){
+            e.preventDefault();
+            // console.log("in over");
+        }
+        c.ondragleave=function(e){
+            this.style.opacity = 0.8;
+        }
+        function addtoCart(id){
+            // cart is empty or not
+            var s = sessionStorage.getItem("cart");
+            var amount = 1;
+            if (s == null){
+                
+                amount = 1;
+            } else {
+                s = JSON.parse(s);
+                for(var i = 0; i < s["items"].length; i++){
+                    if(s['items'][i]["id"] == id) {
+                        s['items'][i]["amount"] += 1;
+                    }
+                }
+            }
+            
+            var pattern = JSON.parse(JSON.stringify(itemslist[id]));
+            pattern['id'] = id;
+
+            pattern["amount"] = 1;
+
+        }
+        
+        
+    }    
+    
     
   </script>
 
