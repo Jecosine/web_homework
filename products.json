@@ -1,16 +1,44 @@
-{
-  "data": [
-    {
-      "id": "",
-      "title": "",
-      "imgurl": "",
-      "price": ""
-    },
-    {
-      "id": "",
-      "title": "",
-      "imgurl": "",
-      "price": ""
-    }
-  ]
-}
+{'imurl': 'https://m.media-amazon.com/images/I/61Jq0XcJo9L._AC_UY218_ML3_.jpg', 'title': 'Building Computer Vision Projects with OpenCV 4 and C++: Implement complex computer vision algorithms and explore deep learning and face detection', 'price': '$47.82'}
+{'imurl': 'https://m.media-amazon.com/images/I/71aJ3OC-5SL._AC_UY218_ML3_.jpg', 'title': 'Mastering OpenCV 4 with Python: A practical guide covering topics from image processing, augmented reality to deep learning with OpenCV 4 and Python 3.7', 'price': '$44.99'}
+{'imurl': 'https://m.media-amazon.com/images/I/61myYepuQ+L._AC_UY218_ML3_.jpg', 'title': 'Practical OpenCV 3 Image Processing with Python', 'price': '$1.99'}
+{'imurl': 'https://m.media-amazon.com/images/I/91E0M-1ifnL._AC_UY218_ML3_.jpg', 'title': 'Learning OpenCV 3: Computer Vision in C++ with the OpenCV Library', 'price': '$60.15'}
+{'imurl': 'https://m.media-amazon.com/images/I/71z7DGMdzYL._AC_UY218_ML3_.jpg', 'title': 'Machine Learning for OpenCV 4: Intelligent algorithms for building image processing apps using OpenCV 4, Python, and scikit-learn, 2nd Edition', 'price': '$44.99'}
+{'imurl': 'https://m.media-amazon.com/images/I/71RVM4zY-3L._AC_UY218_ML3_.jpg', 'title': 'OpenCV 4 Computer Vision Application Programming Cookbook: Build complex computer vision applications with OpenCV and C++, 4th Edition', 'price': '$39.99'}
+{'imurl': 'https://m.media-amazon.com/images/I/81x75XVZpNL._AC_UY218_ML3_.jpg', 'title': 'Mastering OpenCV 4: A comprehensive guide to building computer vision and image processing applications with C++, 3rd Edition', 'price': '$29.49'}
+{'imurl': 'https://m.media-amazon.com/images/I/51KZWTKsUBL._AC_UY218_ML3_.jpg', 'title': 'Learning OpenCV: Computer Vision with the OpenCV Library', 'price': '$49.99'}
+{'imurl': 'https://m.media-amazon.com/images/I/712sPsQBu1L._AC_UY218_ML3_.jpg', 'title': 'Programming Computer Vision with Python: Tools And Algorithms For Analyzing Images', 'price': '$38.66'}
+{'imurl': 'https://m.media-amazon.com/images/I/713ftEV5HxL._AC_UY218_ML3_.jpg', 'title': 'Machine Learning for OpenCV: Intelligent image processing with Python', 'price': '$31.19'}
+{'imurl': 'https://m.media-amazon.com/images/I/71WgV4BDpVL._AC_UY218_ML3_.jpg', 'title': 'Learn OpenCV 4 by Building Projects: Build real-world computer vision and image processing applications with OpenCV and C++, 2nd Edition', 'price': '$44.99'}
+{'imurl': 'https://m.media-amazon.com/images/I/71muCe+rk2L._AC_UY218_ML3_.jpg', 'title': 'Qt 5 and OpenCV 4 Computer Vision Projects: Get up to speed with cross-platform computer vision app development by building seven practical projects', 'price': '$39.99'}
+{'imurl': 'https://m.media-amazon.com/images/I/71pky3URwaL._AC_UY218_ML3_.jpg', 'title': 'Computer Vision Projects with OpenCV and Python 3: Six end-to-end projects built using machine learning with OpenCV, Python, and TensorFlow', 'price': '$29.99'}
+{'imurl': 'https://m.media-amazon.com/images/I/513S-IJAJnL._AC_UY218_ML3_.jpg', 'title': 'OpenCV-Python with PostgreSQL for Absolute Beginners: A Hands-On, Practical Database-Driven Applications', 'price': '$27.50'}
+{'imurl': 'https://m.media-amazon.com/images/I/61mE-oXAIdL._AC_UY218_ML3_.jpg', 'title': 'Learn Computer Vision Using OpenCV: With Deep Learning CNNs and RNNs', 'price': '$27.21'}
+{'imurl': 'https://m.media-amazon.com/images/I/91SlwaLWAuL._AC_UY218_ML3_.jpg', 'title': 'OpenCV with Python Blueprints', 'price': '$19.79'}
+{'imurl': 'https://m.media-amazon.com/images/I/51hU37ZexpL._AC_UY218_ML3_.jpg', 'title': 'Open Source Computer Vision for Beginners: Learn OpenCV using C++ in fastest possible way', 'price': '$36.99'}
+{'imurl': 'https://m.media-amazon.com/images/I/61Bs6YARDOL._AC_UY218_ML3_.jpg', 'title': 'Hands-On GPU-Accelerated Computer Vision with OpenCV and CUDA: Effective techniques for processing complex image data in real time using GPUs', 'price': '$49.99'}
+{'imurl': 'https://m.media-amazon.com/images/I/71NfujsaLkL._AC_UY218_ML3_.jpg', 'title': 'OpenCV By Example: Enhance your understanding of Computer Vision and image processing by developing real-world projects in OpenCV 3', 'price': '$49.99'}
+{'imurl': 'https://m.media-amazon.com/images/I/61i6E-tHDIL._AC_UY218_ML3_.jpg', 'title': 'Beginning Robotics with Raspberry Pi and Arduino: Using Python and OpenCV', 'price': '$25.49'}
+{'imurl': 'https://m.media-amazon.com/images/I/71px+5+7sKL._AC_UY218_ML3_.jpg', 'title': 'Learning Robotics Using Python: Design, simulate, program, and prototype an interactive autonomous mobile robot from scratch with the help of Python, ROS, and Open-CV!', 'price': '$25.49'}
+{'imurl': 'https://m.media-amazon.com/images/I/81fmAnufssL._AC_UY218_ML3_.jpg', 'title': 'OpenCV 4 for Secret Agents: Use OpenCV 4 in secret projects to classify cats, reveal the unseen, and react to rogue drivers, 2nd Edition', 'price': '$19.79'}
+{'imurl': 'https://m.media-amazon.com/images/I/71bhpSt75WL._AC_UY218_ML3_.jpg', 'title': 'Computer Vision with OpenCV 3 and Qt5: Build visually appealing, multithreaded, cross-platform computer vision applications', 'price': '$38.46'}
+{'imurl': 'https://m.media-amazon.com/images/I/61SFS1isYEL._AC_UY218_ML3_.jpg', 'title': 'OpenCV: Computer Vision Projects with Python', 'price': '$79.99'}
+{'imurl': 'https://m.media-amazon.com/images/I/71P4atQpTbL._AC_UY218_ML3_.jpg', 'title': 'Hands-On Machine Learning with Scikit-Learn and TensorFlow: Concepts, Tools, and Techniques to Build Intelligent Systems', 'price': '$56.99'}
+{'imurl': 'https://m.media-amazon.com/images/I/81Od7+ICOeL._AC_UY218_ML3_.jpg', 'title': 'OpenCV 3 Computer Vision with Python Cookbook: Leverage the power of OpenCV 3 and Python to build computer vision applications', 'price': '$22.39'}
+{'imurl': 'https://m.media-amazon.com/images/I/81FVc+TLWNL._AC_UY218_ML3_.jpg', 'title': 'OpenCV for Secret Agents', 'price': '$16.54'}
+{'imurl': 'https://m.media-amazon.com/images/I/71DmZ2N+4DL._AC_UY218_ML3_.jpg', 'title': 'Computer Vision: Models, Learning, and Inference', 'price': '$55.56'}
+{'imurl': 'https://m.media-amazon.com/images/I/81ZtvMQwnFL._AC_UY218_ML3_.jpg', 'title': 'OpenCV 3.x with Python By Example: Make the most of OpenCV and Python to build applications for object recognition and augmented reality, 2nd Edition', 'price': '$32.39'}
+{'imurl': 'https://m.media-amazon.com/images/I/51OiIDnUanL._AC_UY218_ML3_.jpg', 'title': 'OpenCV-Python with MySQL for Absolute Beginners: A Hands-On, Practical Database-Driven Applications', 'price': '$27.50'}
+{'imurl': 'https://m.media-amazon.com/images/I/71AVuif2zCL._AC_UY218_ML3_.jpg', 'title': 'Learning Robotics using Python: Design, simulate, program, and prototype an autonomous mobile robot using ROS, OpenCV, PCL, and Python, 2nd Edition', 'price': '$34.99'}
+{'imurl': 'https://m.media-amazon.com/images/I/61x6Es9V8DL._AC_UY218_ML3_.jpg', 'title': 'OpenCV 3 Computer Vision Application Programming Cookbook - Third Edition', 'price': '$37.99'}
+{'imurl': 'https://m.media-amazon.com/images/I/71qzIJKopLL._AC_UY218_ML3_.jpg', 'title': 'Hands-On Algorithms for Computer Vision: Learn how to use the best and most practical computer vision algorithms using OpenCV', 'price': '$29.49'}
+{'imurl': 'https://m.media-amazon.com/images/I/61tUkpYU+LL._AC_UY218_ML3_.jpg', 'title': 'IPython Interactive Computing and Visualization Cookbook - Second Edition', 'price': '$34.99'}
+{'imurl': 'https://m.media-amazon.com/images/I/51nNglGLHIL._AC_UY218_ML3_.jpg', 'title': 'Open Source Computer Vision for Beginners: Learn OpenCV using C++ in fastest possible way (2nd Edition - Black and White Version)', 'price': '$23.99'}
+{'imurl': 'https://m.media-amazon.com/images/I/71rScin07rL._AC_UY218_ML3_.jpg', 'title': 'Practical Machine Learning and Image Processing: For Facial Recognition, Object Detection, and Pattern Recognition Using Python', 'price': '$21.60'}
+{'imurl': 'https://m.media-amazon.com/images/I/51+7lOtpRQL._AC_UY218_ML3_.jpg', 'title': 'Mastering OpenCV with Practical Computer Vision Projects', 'price': '$16.54'}
+{'imurl': 'https://m.media-amazon.com/images/I/718G2kP0M7L._AC_UY218_ML3_.jpg', 'title': 'OpenCV 3.0 Computer Vision with Java: Create multiplatform computer vision desktop and web applications using the combination of OpenCV and Java', 'price': '$39.99'}
+{'imurl': 'https://m.media-amazon.com/images/I/41WXuZKZuzL._AC_UY218_ML3_.jpg', 'title': 'Learning OpenCV 3 Application Development', 'price': '$34.99'}
+{'imurl': 'https://m.media-amazon.com/images/I/91PJTUGWi8L._AC_UY218_ML3_.jpg', 'title': 'OpenCV Computer Vision Application Programming Cookbook Second Edition', 'price': '$26.99'}
+{'imurl': 'https://m.media-amazon.com/images/I/91DvxTu4XCL._AC_UY218_ML3_.jpg', 'title': 'Mastering OpenCV Android Application Programming', 'price': '$31.19'}
+{'imurl': 'https://m.media-amazon.com/images/I/71i9eKTjIKL._AC_UY218_ML3_.jpg', 'title': 'Java Image Processing Recipes: With OpenCV and JVM', 'price': '$8.50'}
+{'imurl': 'https://m.media-amazon.com/images/I/51TAnGSEh-L._AC_UY218_ML3_.jpg', 'title': 'OpenCV-Python with MariaDB for Absolute Beginners: A Hands-On, Practical Database-Driven Applications', 'price': '$24.50'}
+{'imurl': 'https://m.media-amazon.com/images/I/81ztE4ZXv3L._AC_UY218_ML3_.jpg', 'title': 'OpenCV 2 Computer Vision Application Programming Cookbook', 'price': '$44.99'}
