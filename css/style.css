@@ -22,7 +22,7 @@ body {
     min-width: 1280px;
     top: 0;
     width: 100%;
-    overflow: hidden;
+    /* overflow: hidden; */
     height: 85px;
     background-color: rgb(243, 243, 243);
 }
@@ -150,13 +150,13 @@ form {
     display: inline-block;
     position: relative;
     float: right;
-    right: -120px;
+    right: -100px;
     width: 200px;
     height: 50px;
     background-color: rgb(255, 170, 42);
     font-size: 22px;
     font-weight: bold;
-    transform: skew(-25deg);
+    /* transform: skew(-25deg); */
     font-style: none;
     text-decoration: none;
     text-align: center;
@@ -165,18 +165,85 @@ form {
 #cart:hover {
     background-color: rgb(255, 215, 154);
 }
-#cart div {
+#cart > div.cart-icon {
     width: 100%;
     height: 50px;
     line-height: 50px;
     color: white;
-    transform: skewX(25deg);
+    /* transform: skewX(25deg); */
 }
-#cart div i {
+#cart > div.cart-icon > i {
     width: 30px;
     height: 50px;
     font-size: 30px;
     margin-right: 20px;
+}
+#cart-items {
+    /* display: none; */
+    position: absolute;
+    top: 50px;
+    right: 00px;
+    width: 300px;
+    min-height: 300px;
+    /* transform: skewX(25deg); */
+    background-color: #fdfdfd;
+    z-index: 999;
+    opacity: 0.6;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    box-shadow: 4px 4px 4px rgba(0,0,0,0.16);
+    transition: all 0.5s;
+}
+@keyframes appear {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+#cart:hover > #cart-items {
+    display: block;
+    
+    /* opacity: 1; */
+    
+}
+#cart-items:hover {
+    opacity: 1;
+}
+.cit {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #ccc;
+    color: #5e5e5e;
+}
+.thumb {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    margin: auto;
+    margin-left: 10px;
+    background-color: #767676;
+}
+.cart-info-right {
+    width: calc(100% - 100px);
+    margin-left: 10px;
+    background-color: #aaa;
+    text-align: left;
+}
+.cart-title {
+    height: 30px;
+    font-size: 15px;
+    text-align: left;
+}
+.cart-price {
+    padding-top:20px;
+    height: 30px;
+    color: #FECD85;
 }
 #sub-navi {
     width: 100%;

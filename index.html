@@ -4,6 +4,7 @@
         <link rel="stylesheet" href="css/style.css" />
         <link rel="stylesheet" href="css/font-awesome.min.css" />
         <script type="text/javascript" src="js/slider.js" ></script>
+        <script type="text/javascript" src="items.js"></script>
     </head>
     <body>
         <div id="navigation-container">
@@ -23,7 +24,19 @@
                         </form>
                     </div>
                 </div>
-                <a href="#" id="cart"><div><i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart</div></a>
+                <a href="#" id="cart">
+                    <div class="cart-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart</div>
+                    <div id="cart-items">
+                        <div class="cit">
+                            <div class="thumb"></div>
+                            <div class="cart-info-right">
+                                <div class="cart-title">Building Computer V</div>
+                                <div class="cart-price">$66.52</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </a>
             </div>
             <div id="sub-navi">
                 <div id="subnavi-g">
@@ -33,7 +46,7 @@
                     <a class="subnavi-item" href="#">New Releases</a>
                     <a class="subnavi-item" href="#">Gift Cards</a>
                 </div>
-            </div>
+            </div>ss
         </div>
         <div id="main-container">
             <div id="main-wrap">
@@ -531,6 +544,21 @@
         
     </body>
     <script>
+        var itemlist = itemsdata['dt'];
+        window.onload = function(){
+            // load cart
+            var s = sessionStorage.getItem("cart");
+            s = JSON.parse(s);
+            if (s == null)
+                return;
+            var cart = document.getElementById("cart-items");
+            for(var i = 0; i < s['items'].length; i++){
+                var t = document.createElement("div");
+                t.classList.add("cit");
+                t.innerHTML = '<div class="thumb"></div><div class="cart-info-right"><div class="cart-title">'+itemlist[s['items']]+'</div><div class="cart-price">'++'</div></div>'
+            }
+
+        }
         var hlist = document.getElementById("hcate").getElementsByTagName("ul");
         var sublist = hlist.children;
         var clist = document.getElementById("cate-l");
