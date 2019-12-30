@@ -3,8 +3,9 @@
     <head>
         <link rel="stylesheet" href="css/style.css" />
         <link rel="stylesheet" href="css/font-awesome.min.css" />
-        <script type="text/javascript" src="js/slider.js" ></script>
         <script type="text/javascript" src="items.js"></script>
+        <script type="text/javascript" src="js/slider.js" ></script>
+        
     </head>
     <body>
         <div id="navigation-container">
@@ -27,13 +28,13 @@
                 <a href="#" id="cart">
                     <div class="cart-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart</div>
                     <div id="cart-items">
-                        <div class="cit">
+                        <!-- <div class="cit">
                             <div class="thumb"></div>
                             <div class="cart-info-right">
                                 <div class="cart-title">Building Computer V</div>
                                 <div class="cart-price">$66.52</div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
 
                 </a>
@@ -544,21 +545,22 @@
         
     </body>
     <script>
-        var itemlist = itemsdata['dt'];
-        window.onload = function(){
-            // load cart
-            var s = sessionStorage.getItem("cart");
-            s = JSON.parse(s);
-            if (s == null)
-                return;
+        var itemslist = itemsdata['dt'];
+        
+        // load cart
+        var s = localStorage.getItem("cart");
+        s = JSON.parse(s);
+        if (s != null){
+            // return;
             var cart = document.getElementById("cart-items");
             for(var i = 0; i < s['items'].length; i++){
                 var t = document.createElement("div");
                 t.classList.add("cit");
-                t.innerHTML = '<div class="thumb"></div><div class="cart-info-right"><div class="cart-title">'+itemlist[s['items']]+'</div><div class="cart-price">'++'</div></div>'
+                t.innerHTML = '<div class="thumb" style="background-size:cover;background: url(./images/items/'+itemslist[s['items'][i]['id']]['imurl']+')"></div><div class="cart-info-right"><div class="cart-title">' + itemslist[s['items'][i]['id']]['title'].slice(0,30) + '</div><div class="cart-price">'+itemslist[s['items'][i]['id']]['price']+'</div></div>'
+                cart.appendChild(t);
             }
-
         }
+        
         var hlist = document.getElementById("hcate").getElementsByTagName("ul");
         var sublist = hlist.children;
         var clist = document.getElementById("cate-l");
@@ -603,7 +605,7 @@
 
         // show brands
         var b = document.getElementById("brand-row");
-        var bs = b.getElementsByClassName("brand-img");
+        // var bs = b.getElementsByClassName("brand-img");
         
     </script>
     <div id="footer-container">

@@ -179,12 +179,13 @@ form {
     margin-right: 20px;
 }
 #cart-items {
-    /* display: none; */
+    display: none;
     position: absolute;
     top: 50px;
     right: 00px;
     width: 300px;
     min-height: 300px;
+    max-height: 400px;
     /* transform: skewX(25deg); */
     background-color: #fdfdfd;
     z-index: 999;
@@ -218,7 +219,8 @@ form {
     display: flex;
     flex-direction: row;
     align-items: center;
-    background-color: #ccc;
+    /* background-color: #ccc; */
+    
     color: #5e5e5e;
 }
 .thumb {
@@ -227,12 +229,13 @@ form {
     height: 80px;
     margin: auto;
     margin-left: 10px;
-    background-color: #767676;
+    background-size: cover;
+    /* background-color: #767676; */
 }
 .cart-info-right {
     width: calc(100% - 100px);
     margin-left: 10px;
-    background-color: #aaa;
+    /* background-color: #aaa; */
     text-align: left;
 }
 .cart-title {
