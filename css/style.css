@@ -695,7 +695,7 @@ div.indi:hover {
 #brand {
     position: relative;
     width: calc(100% - 40px);
-    height: 150px;
+    min-height: 150px;
     /* margin: auto; */
     margin-left: 20px;
     top: -200px;
