@@ -5,7 +5,7 @@
         <link rel="stylesheet" href="css/cart.css" />
         <link rel="stylesheet" href="css/font-awesome.min.css" />
         <script type="text/javascript" src="items.js"></script>
-        <script type="text/javascript" src="js/slider.js" ></script>
+        <!-- <script type="text/javascript" src="js/slider.js" ></script> -->
         <title>My Cart</title>
     </head>
     <body>
@@ -58,20 +58,21 @@
                 
                 <div id="main-wrapper">
                   <ul id="cart-list">
-                    <li class="cart-item-main">
+                    <!-- <li class="cart-item-main" draggable="true">
+                      <div class="dst"></div>
                       <div class="thumbnail"></div>
                       <div class="cart-item-right">
                         <div class="detail-title">Building Computer Vision Projects with OpenCV 4 and C++: Implement complex computer vision algorithms and explore deep learning and face detection<br />
                           <div class="detail-info">Author: John Titor<br />Publish: 2018</div>
-                          <!-- <div class="review"></div> -->
+                          <div class="review"></div>
                         </div>
                         
-                        <div class="amount"><div class="minor bt">-</div>1<div class="plus bt">+</div></div>
+                        <div class="amount"><div class="minor bt">-</div><div class="cart-amount">1</div><div class="plus bt">+</div></div>
                         <div class="single-price">66.25</div>
                       </div>
                       
                       
-                    </li>
+                    </li> -->
                   </ul>
                   <div id="bottom-panel">
                     <div id="clear">Clear</div>
@@ -124,34 +125,165 @@
     </body>
     <script>
         var itemslist = itemsdata['dt'];
-        
+        var bt = document.getElementById("total");
         // load cart
         var s = localStorage.getItem("cart");
         s = JSON.parse(s);
-        if (s != null){
-            // return;
-            var cart = document.getElementById("cart-items-container");
-            for(var i = 0; i < s['items'].length; i++){
-                var t = document.createElement("div");
-                t.classList.add("cit");
-                t.innerHTML = '<div class="thumb" style="background-size:cover;background: url(./images/items/'+itemslist[s['items'][i]['id']]['imurl']+')"></div><div class="cart-info-right"><div class="cart-title">' + itemslist[s['items'][i]['id']]['title'].slice(0,30) + '</div><div class="cart-price">'+itemslist[s['items'][i]['id']]['price']+'</div></div>'
-                cart.appendChild(t);
+        if(s != null){
+          refreshCart();
+          sumprice();
+        }
+        var cartItems = document.getElementById("cart-list").children;
+        var s = localStorage.getItem("cart");
+        s = JSON.parse(s);
+        for(var i = 0;i < s['items'].length; i++){
+          var m = cartItems[i].getElementsByClassName("minor")[0];
+          var p = cartItems[i].getElementsByClassName("plus")[0];
+          var d = cartItems[i].getElementsByClassName("dst")[0];
+          cartItems[i].ondragstart=function(e){
+            var id = this.getElementsByClassName("amount")[0].dataset['id'];
+            e.dataTransfer.setData("id", id);
+            this.getElementsByClassName("dst")[0].style.display = "inline-block";
+          }
+          cartItems[i].ondragend = function(){
+            this.getElementsByClassName("dst")[0].style.display = "none";
+          }
+          cartItems[i].ondragover = function(e){
+            e.preventDefault();
+          }
+          cartItems[i].getElementsByClassName("dst")[0].ondragover=function(e){
+            e.preventDefault();
+          }
+          cartItems[i].getElementsByClassName("dst")[0].ondrop=function(e){
+            var id = parseInt(e.dataTransfer.getData("id"));
+            console.log("kill ", id);
+            s['items'].splice(id,1);
+            localStorage.setItem("cart",JSON.stringify(s));
+            refreshCart();
+          }
+          m.onclick = function(){
+            
+            console.log("clicked: ",id);
+            var a = this.parentNode.getElementsByClassName("cart-amount")[0];
+            var id = parseInt(a.parentNode.dataset['id']);
+            a.innerHTML = (parseInt(a.innerHTML)>0?parseInt(a.innerHTML) - 1:0).toString();
+            if (a.innerHTML == "0"){
+              s['items'].splice(id,1);
             }
+            else{
+              s['items'][id]['amount'] = a.innerHTML;
+            }
+            localStorage.setItem("cart", JSON.stringify(s));
+            // refreshCart();
+            sumprice();
+          }
+          p.onclick = function(){
+            
+            var a = this.parentNode.getElementsByClassName("cart-amount")[0];
+            var id = parseInt(a.parentNode.dataset['id']);
+            a.innerHTML = (parseInt(a.innerHTML) + 1).toString();
+            s['items'][id]['amount'] = a.innerHTML;
+            localStorage.setItem("cart", JSON.stringify(s));
+            // refreshCart();
+            sumprice();
+          }
         }
         
         function refreshCart(){
           var s = localStorage.getItem("cart");
           s = JSON.parse(s);
           if (s != null){
-              // return;
-              var cart = document.getElementById("cart-list");
-              for(var i = 0; i < s['items'].length; i++){
-                  var t = document.createElement("div");
-                  t.classList.add("cit");
-                  t.innerHTML = '<div class="thumb" style="background-size:cover;background: url(./images/items/'+itemslist[s['items'][i]['id']]['imurl']+')"></div><div class="cart-info-right"><div class="cart-title">' + itemslist[s['items'][i]['id']]['title'].slice(0,30) + '</div><div class="cart-price">'+itemslist[s['items'][i]['id']]['price']+'</div></div>'
-                  cart.appendChild(t);
+            var cart = document.getElementById("cart-list");
+            cart.innerHTML="";
+            for(var i = 0; i < s['items'].length; i++){
+                var t = document.createElement("li");
+                var dt = s['items'][i];
+                t.classList.add("cart-item-main");
+                console.log(dt);
+                t.draggable = true;
+                t.innerHTML = `<div class="dst"></div>
+                    <div class="thumbnail" style="background-image: url(./images/items/`+dt['imurl']+`)"></div>
+                    <div class="cart-item-right">
+                      <div class="detail-title">`+dt['title']+`<br />
+                        <div class="detail-info">Author: John Titor<br />Publish: 2018</div>
+                        <!-- <div class="review"></div> -->
+                      </div>
+                      
+                      <div class="amount" data-id="`+ i +`"><div class="minor bt">-</div><div class="cart-amount">`+dt['amount']+`</div><div class="plus bt">+</div></div>
+                      <div class="single-price">`+dt['price']+`</div>
+                    </div>`;
+                cart.appendChild(t);
+            }
+            var cartItems = document.getElementById("cart-list").children;
+            // var s = localStorage.getItem("cart");
+            // s = JSON.parse(s);
+            for(var i = 0;i < s['items'].length; i++){
+              var m = cartItems[i].getElementsByClassName("minor")[0];
+              var p = cartItems[i].getElementsByClassName("plus")[0];
+              var d = cartItems[i].getElementsByClassName("dst")[0];
+              cartItems[i].ondragstart=function(e){
+                var id = this.getElementsByClassName("amount")[0].dataset['id'];
+                e.dataTransfer.setData("id", id);
+                this.getElementsByClassName("dst")[0].style.display = "inline-block";
               }
+              cartItems[i].ondragend = function(){
+                this.getElementsByClassName("dst")[0].style.display = "none";
+              }
+              cartItems[i].ondragover = function(e){
+                e.preventDefault();
+              }
+              cartItems[i].getElementsByClassName("dst")[0].ondragover=function(e){
+                e.preventDefault();
+              }
+              cartItems[i].getElementsByClassName("dst")[0].ondrop=function(e){
+                var id = parseInt(e.dataTransfer.getData("id"));
+                console.log("kill ", id);
+                s['items'].splice(id,1);
+                localStorage.setItem("cart",JSON.stringify(s));
+                refreshCart();
+                sumprice();
+              }
+              m.onclick = function(){
+                
+                console.log("clicked: ",id);
+                var a = this.parentNode.getElementsByClassName("cart-amount")[0];
+                var id = parseInt(a.parentNode.dataset['id']);
+                a.innerHTML = (parseInt(a.innerHTML)>0?parseInt(a.innerHTML) - 1:0).toString();
+                if (a.innerHTML == "0"){
+                  s['items'].splice(id,1);
+                }
+                else{
+                  s['items'][id]['amount'] = a.innerHTML;
+                }
+                localStorage.setItem("cart", JSON.stringify(s));
+                sumprice();
+                // refreshCart();
+              }
+              p.onclick = function(){
+                
+                var a = this.parentNode.getElementsByClassName("cart-amount")[0];
+                var id = parseInt(a.parentNode.dataset['id']);
+                a.innerHTML = (parseInt(a.innerHTML) + 1).toString();
+                s['items'][id]['amount'] = a.innerHTML;
+                localStorage.setItem("cart", JSON.stringify(s));
+                // refreshCart();
+                sumprice();
+              }
+            }
+          
+            // return;
+            
           }
+
+        }
+        
+        function sumprice(){
+          var sum = 0;
+          for(var i = 0 ; i < s['items'].length; i++){
+            sum += parseFloat(s['items'][i]['price'])* parseFloat(s['items'][i]['amount']);
+
+          }
+          bt.innerHTML = sum.toString();
         }
     </script>
     <div id="footer-container">

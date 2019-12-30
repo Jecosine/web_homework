@@ -336,7 +336,7 @@
                 s = {"items":[], "total": 0, "count": 1};     
                 var pattern = JSON.parse(JSON.stringify(itemslist[id]));
                 pattern['id'] = id;
-                pattern["amount"] = 1;
+                pattern["amount"] = "1";
                 s['items'].push(pattern);      
                 localStorage.setItem("cart",JSON.stringify(s));
                 
@@ -345,7 +345,7 @@
                 var flag = false;
                 for(var i = 0; i < s["items"].length; i++){
                     if(s['items'][i]["id"] == id) {
-                        s['items'][i]["amount"] += 1;
+                        s['items'][i]["amount"] = (parseInt(s['items'][i]["amount"]) + 1).toString();
                         s['total'] += parseFloat(s['items'][i]['price']);
                         flag = true;
                     }
@@ -353,7 +353,7 @@
                 if (!flag){
                     var pattern = JSON.parse(JSON.stringify(itemslist[id]));
                     pattern['id'] = id;
-                    pattern["amount"] = 1;
+                    pattern["amount"] = "1";
                     s["total"] += parseFloat(itemslist[id]["price"]);
                     s['items'].push(pattern);
                     

@@ -27,9 +27,18 @@
   flex-direction: row;
   align-items: center;
   transition: all 0.5s;
+  margin-bottom: 15px;
+}
+.dst {
+  display: none;
+  position: relative;
+  margin-left: -200px;
+  width: 200px;
+  height: 300px;
+  background-color: #FECD85;
 }
 .cart-item-main:hover {
-  box-shadow: 4px 4px 6px  rgba(0,0,0,0.16);
+  box-shadow: 4px 4px 6px  rgba(0, 0, 0, 0.253);
 }
 .thumbnail {
   display: inline-block;
@@ -48,7 +57,7 @@
 .detail-title {
   display: inline-block;
   width: calc(100% - 400px);
-  height: 100%;
+  height: 260px;
   line-height: 30px;
   font-size: 20px;
   font-weight: 600;
@@ -61,12 +70,18 @@
   margin-top: 10px;
 }
 .amount {
-  display: inline-block;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
   width: 160px;
+  text-align: center;
+  height: 100%;
   margin: auto;
   font-size: 30px;
   font-weight: 600;
   margin-left: 40px;
+  /* avoid selected */
+  user-select: none;
 }
 .bt {
   display: inline-block;
@@ -160,4 +175,8 @@
 #confirmpay:hover {
   background-color: rgb(164, 245, 197);
   cursor: pointer;
+  
+}
+.cart-amount {
+  display: inline-block;
 }
