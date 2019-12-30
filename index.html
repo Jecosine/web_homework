@@ -28,6 +28,7 @@
                 <a href="#" id="cart">
                     <div class="cart-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart</div>
                     <div id="cart-items">
+                        <div id="cart-items-container"></div>
                         <!-- <div class="cit">
                             <div class="thumb"></div>
                             <div class="cart-info-right">
@@ -35,7 +36,9 @@
                                 <div class="cart-price">$66.52</div>
                             </div>
                         </div> -->
+                        <div href="cart.html" onclick="tocart()" id="checkout">Check Out</div>
                     </div>
+                    
 
                 </a>
             </div>
@@ -552,7 +555,7 @@
         s = JSON.parse(s);
         if (s != null){
             // return;
-            var cart = document.getElementById("cart-items");
+            var cart = document.getElementById("cart-items-container");
             for(var i = 0; i < s['items'].length; i++){
                 var t = document.createElement("div");
                 t.classList.add("cit");
@@ -602,7 +605,10 @@
 			bars[i].getElementsByTagName("div")[0].style.height = "510px";
         }	
         
-
+        //to cart
+        function tocart(){
+            window.location.href="cart.html";
+        }
         // show brands
         var b = document.getElementById("brand-row");
         // var bs = b.getElementsByClassName("brand-img");

@@ -184,16 +184,43 @@ form {
     top: 50px;
     right: 00px;
     width: 300px;
-    min-height: 300px;
-    max-height: 400px;
+    min-height: 450px;
     /* transform: skewX(25deg); */
     background-color: #fdfdfd;
     z-index: 999;
     opacity: 0.6;
-    overflow-y: scroll;
-    overflow-x: hidden;
+    
     box-shadow: 4px 4px 4px rgba(0,0,0,0.16);
     transition: all 0.5s;
+}
+#cart-items-container {
+    display: block;
+    min-height: 300px;
+    max-height: 400px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+#checkout {
+    position: relative;
+    display: block;
+    margin: auto;
+    text-decoration: none;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    padding: 5px;
+    font-size: 18px;
+    font-weight: 600;
+    color:white;
+    background-color: rgb(252, 179, 71);
+    border-radius: 10px;
+    transition: all 0.5s;
+}
+#checkout:hover {
+    background-color: rgb(255, 234, 202);
+    color: rgb(252, 179, 71);
+    font-size: 20px;
+    /* font-weight: 800; */
 }
 @keyframes appear {
     from {
