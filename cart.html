@@ -20,13 +20,13 @@
                         </ul> -->
                     </div>
                     <div id="search-bar-bg">
-                        <form action="banana.jsp" method="GET">
+                        <form action="items.html" method="GET">
                             <input id="search-bar" type="text" name="search" placeholder="Search..."/>
                             <button id="submit-button" type="submit"><div>Search <i class="fa fa-search" aria-hidden="true"></i></div></button>
                         </form>
                     </div>
                 </div>
-                <a href="#" id="cart">
+                <a href="cart.html" id="cart">
                     <div class="cart-icon"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart</div>
                     <div id="cart-items">
                         <div id="cart-items-container"></div>
@@ -37,7 +37,7 @@
                                 <div class="cart-price">$66.52</div>
                             </div>
                         </div> -->
-                        <div href="cart.html" onclick="tocart()" id="checkout">Check Out</div>
+                        <div onclick="tocart()" id="checkout">Check Out</div>
                     </div>
                     
 
@@ -124,7 +124,57 @@
 
 
         </div>
+        <div id="footer-container">
+                <div id="footer-wrapper">
+                    <div id="about-us" class="footer-col">
+                        <div class="footer-title">About Us</div>
+                        <ul class="footer-ul">
+                            <li class="footer-li"><a href="#">Customer Service</a></li>
+                            <li class="footer-li"><a href="#">Advanced Search</a></li>
+                            <li class="footer-li"><a href="#">Order and Returns</a></li>
+                            <li class="footer-li"><a href="#">Contact Us</a></li>
+                        </ul>
+                        
+                    </div>
+                    <div id="policy" class="footer-col">
+                        <div class="footer-title">Policy</div>
+                        <ul class="footer-ul">
+                            <li class="footer-li"><a href="#">Privacy Policy</a></li>
+                            <li class="footer-li"><a href="#">Site Map</a></li>
+                            <li class="footer-li"><a href="#">Search Term</a></li>
+                            <li class="footer-li"><a href="#">Customer Service</a></li>
+                        </ul>
+                        
+                    </div>
+                    <div id="account" class="footer-col">
+                        <div class="footer-title">Account</div>
+                        <ul class="footer-ul">
+                            <li class="footer-li"><a href="#">Sign In</a></li>
+                            <li class="footer-li"><a href="#">Sign Up</a></li>
+                            <li class="footer-li"><a href="#">View Cart</a></li>
+                            <li class="footer-li"><a href="#">Help</a></li>
+                        </ul>
+                        
+                    </div>
+                    <div id="contact" class="footer-col">
+                        <div class="footer-title">Contact</div>
+                        <ul class="footer-ul">
+                            <li class="footer-li"><a href="#"><i class="fa fa-envelope yellow" aria-hidden="true"></i>  Email: jecosine@outlook.com</a></li>
+                            <li class="footer-li"><a href="#"><a href="#"><i class="fa fa-phone yellow" aria-hidden="true"></i> Tele: 123-45678901</a></li>
+                            <li class="footer-li"><a href="#">
+                                <a href="#"><i class="fa fa-twitter yellow-l" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-skype yellow-l" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-facebook yellow-l" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-linkedin yellow-l" aria-hidden="true"></i></a>
         
+                            </li>
+                            
+                            
+                        </ul>
+                    </div>
+                    
+                </div>
+            </div>
     </body>
     <script>
         var itemslist = itemsdata['dt'];
@@ -177,6 +227,7 @@
             s['items'].splice(id,1);
             localStorage.setItem("cart",JSON.stringify(s));
             refreshCart();
+            sumprice();
           }
           m.onclick = function(){            
             console.log("clicked: ",id);
@@ -310,55 +361,5 @@
           bt.innerHTML = sum.toFixed(2).toString();
         }
     </script>
-    <div id="footer-container">
-        <div id="footer-wrapper">
-            <div id="about-us" class="footer-col">
-                <div class="footer-title">About Us</div>
-                <ul class="footer-ul">
-                    <li class="footer-li"><a href="#">Customer Service</a></li>
-                    <li class="footer-li"><a href="#">Advanced Search</a></li>
-                    <li class="footer-li"><a href="#">Order and Returns</a></li>
-                    <li class="footer-li"><a href="#">Contact Us</a></li>
-                </ul>
-                
-            </div>
-            <div id="policy" class="footer-col">
-                <div class="footer-title">Policy</div>
-                <ul class="footer-ul">
-                    <li class="footer-li"><a href="#">Privacy Policy</a></li>
-                    <li class="footer-li"><a href="#">Site Map</a></li>
-                    <li class="footer-li"><a href="#">Search Term</a></li>
-                    <li class="footer-li"><a href="#">Customer Service</a></li>
-                </ul>
-                
-            </div>
-            <div id="account" class="footer-col">
-                <div class="footer-title">Account</div>
-                <ul class="footer-ul">
-                    <li class="footer-li"><a href="#">Sign In</a></li>
-                    <li class="footer-li"><a href="#">Sign Up</a></li>
-                    <li class="footer-li"><a href="#">View Cart</a></li>
-                    <li class="footer-li"><a href="#">Help</a></li>
-                </ul>
-                
-            </div>
-            <div id="contact" class="footer-col">
-                <div class="footer-title">Contact</div>
-                <ul class="footer-ul">
-                    <li class="footer-li"><a href="#"><i class="fa fa-envelope yellow" aria-hidden="true"></i>  Email: jecosine@outlook.com</a></li>
-                    <li class="footer-li"><a href="#"><a href="#"><i class="fa fa-phone yellow" aria-hidden="true"></i> Tele: 123-45678901</a></li>
-                    <li class="footer-li"><a href="#">
-                        <a href="#"><i class="fa fa-twitter yellow-l" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-skype yellow-l" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-facebook yellow-l" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-linkedin yellow-l" aria-hidden="true"></i></a>
-
-                    </li>
-                    
-                    
-                </ul>
-            </div>
-            
-        </div>
-    </div>
+    
 </html>

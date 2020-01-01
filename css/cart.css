@@ -1,9 +1,8 @@
-#main-container {
-  
-}
+
 #main-wrap {
   overflow: visible;
-  z-index: 999;
+  z-index:2;
+  
 }
 #main-wrapper {
   width: 100%;
@@ -220,4 +219,9 @@
   color: #818181;
   top: 250px;
   z-index: 1;
+}
+
+#reco {
+  margin-top: 30px;
+  margin-bottom: 30px;
 }

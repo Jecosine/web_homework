@@ -125,13 +125,13 @@ a {
 }
 @keyframes spike {
     0% {
-        color: rgb(255, 170, 42);
+        background-color: rgb(255, 170, 42);
     }
     50% {
-        color: rgb(255, 241, 219);
+        background-color: rgb(255, 241, 219);
     }
     100% {
-        color: rgb(255, 170, 42);
+        background-color: rgb(255, 170, 42);
     }
 }
 @keyframes jump {
