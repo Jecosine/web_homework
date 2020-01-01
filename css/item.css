@@ -9,6 +9,10 @@ a {
     height: 300px;
     background-color: white;
     margin: 10px;
+    transition: all 0.3s;
+}
+.item-container:hover {
+    box-shadow: 4px 4px 1px rgba(0,0,0,0.16);
 }
 .item-wrap {
     position: relative;
@@ -23,6 +27,8 @@ a {
     width: 100%;
     height: 180px;
     background-color: orange;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 .item-upper {
     margin-top: 5px;
@@ -89,6 +95,7 @@ a {
     margin-left: 10px;
     margin-top: 20px;
 }
+
 .it-cart {
     display: inline-block;
     display: none;
@@ -114,15 +121,27 @@ a {
     color: rgba(253, 150, 31, 0.842);
     background-color: rgba(255, 244, 231, 0.842);
     border-radius: 50%;
+    
 }
 @keyframes spike {
     0% {
-        background-color: rgb(255, 170, 42);
+        color: rgb(255, 170, 42);
     }
     50% {
-        background-color: rgb(255, 241, 219);
+        color: rgb(255, 241, 219);
     }
     100% {
-        background-color: rgb(255, 170, 42);
+        color: rgb(255, 170, 42);
+    }
+}
+@keyframes jump {
+    0% {
+        margin-top: 120px;
+    }
+    50% {
+        margin-top: 100px;
+    }
+    100% {
+        margin-top: 120px;
     }
 }

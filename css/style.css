@@ -187,7 +187,8 @@ form {
     top: 50px;
     right: 00px;
     width: 300px;
-    min-height: 450px;
+    min-height: 300px;
+    max-height: 480px;
     /* transform: skewX(25deg); */
     background-color: #fdfdfd;
     z-index: 999;
@@ -207,6 +208,7 @@ form {
     position: relative;
     display: block;
     margin: auto;
+    margin-bottom: 10px;
     text-decoration: none;
     width: 100px;
     height: 30px;

@@ -11,7 +11,7 @@
     <body>
         <div id="navigation-container">
             <div id="navigation-wrap">
-                <div id="icon-container"></div>
+                <div id="icon-container" onclick="window.location.href='index.html'"></div>
                 <div id="search-container">
                     <div id="cate-container">
                             <div>Search <i class="fa fa-search" aria-hidden="true"></i></div>
@@ -52,6 +52,9 @@
                     <a class="subnavi-item" href="#">Gift Cards</a>
                 </div>
             </div>ss
+        </div>
+        <div id="nothing">
+            <p>There is nothing in your cart! <br>Come <a href="items.html">here</a> to shop!</p>
         </div>
         <div id="main-container">
             <div id="main-wrap">
@@ -126,6 +129,11 @@
     <script>
         var itemslist = itemsdata['dt'];
         var bt = document.getElementById("total");
+        // load brand
+        var brands = document.getElementsByClassName("brand-img");
+        for (var i = 0;i < 12;i++){
+            brands[i].getElementsByTagName("div")[0].setAttribute("style","background-image:url(./images/brand/"+(i+1)+".webp)");
+        }
         // load cart
         var s = localStorage.getItem("cart");
         s = JSON.parse(s);

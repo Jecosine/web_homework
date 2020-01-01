@@ -1,4 +1,6 @@
-
+#main-container {
+  z-index: 999;
+}
 #main-wrap {
   overflow: visible;
 }
@@ -17,7 +19,7 @@
 #cart-list {
   width: 100%;
   min-height: 300px;
-
+  
 }
 .cart-item-main {
   width: 100%;
@@ -28,6 +30,7 @@
   align-items: center;
   transition: all 0.5s;
   margin-bottom: 15px;
+  
 }
 .dst {
   display: none;
@@ -179,4 +182,16 @@
 }
 .cart-amount {
   display: inline-block;
+}
+
+#nothing {
+  position: absolute;
+  width: 1200px;
+  margin-left: calc(50% - 600px);
+  text-align: center;
+  font-size: 30px;
+  font-weight: 600;
+  color: #818181;
+  top: 250px;
+  z-index: 1;
 }
