@@ -19,7 +19,7 @@ window.onload = function() {
         console.log("pressed:",this.dataset['index']);
         console.log("cur:",cur);
         slide(this.dataset['index']);
-        cur = this.dataset['index'];
+        cur = parseInt(this.dataset['index']);
       
       }
     }
@@ -35,6 +35,7 @@ window.onload = function() {
   leftImg.style.background = "linear-gradient( -180deg, rgba(255, 255, 255, 0.055),  rgba(255, 255, 255, 0.418), rgba(235, 235, 235, 0.74), rgb(235, 235, 235)), url(./images/slider/sl-"+"3"+".jpg)";
   rightImg.style.background = "linear-gradient( -180deg, rgba(255, 255, 255, 0.055),  rgba(255, 255, 255, 0.418), rgba(235, 235, 235, 0.74), rgb(235, 235, 235)), url(./images/slider/sl-"+"1"+".jpg)";
   function autoslide(){
+    console.log("in auto slide", cur);
     slide(parseIndex(cur + 1));
     cur = parseIndex(cur + 1);
   }
@@ -57,8 +58,9 @@ window.onload = function() {
   }
   // slide function: slide from index a to b
   function slide(id) {
-    
+    console.log("in slide ",id);
     id = parseInt(id);
+    id = parseIndex(id);
     // console.log(parseIndex(id));
     // console.log(parseIndex(id+1).toString());
     // console.log("./images/slider/sl-"+parseIndex(id+1).toString()+".jpg)");

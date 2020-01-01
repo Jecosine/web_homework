@@ -548,8 +548,7 @@
         
     </body>
     <script>
-        var itemslist = itemsdata['dt'];
-        
+        var itemslist = itemsdata['dt'];        
         // load cart
         var s = localStorage.getItem("cart");
         s = JSON.parse(s);
@@ -562,25 +561,18 @@
                 t.innerHTML = '<div class="thumb" style="background-size:cover;background: url(./images/items/'+itemslist[s['items'][i]['id']]['imurl']+')"></div><div class="cart-info-right"><div class="cart-title">' + itemslist[s['items'][i]['id']]['title'].slice(0,30) + '</div><div class="cart-price">'+itemslist[s['items'][i]['id']]['price']+'</div></div>'
                 cart.appendChild(t);
             }
-        }
-        
+        }        
         var hlist = document.getElementById("hcate").getElementsByTagName("ul");
         var sublist = hlist.children;
         var clist = document.getElementById("cate-l");
         var bars = clist.children;
-        
-        function showSub(){
-            // console.log(this);
-        }
-    
         for (var i = 0;i< 15; i++){
             // console.log(bars[i]);
             bars[i].getElementsByTagName("div")[0].getElementsByTagName("ul")[0].innerHTML = hlist[Number(bars[i].dataset["index"])].innerHTML;
             //bars[i].getElementsByTagName("div")[0].getElementsByTagName("ul")[0].style.left = "9999px";
             bars[i].getElementsByTagName("div")[0].style.left = "9999px";
             bars[i].getElementsByTagName("div")[0].style.display = "none";
-            //bars[i].getElementsByTagName("div")[0].getElementsByTagName("ul")[0].style.display = "none";
-			
+            //bars[i].getElementsByTagName("div")[0].getElementsByTagName("ul")[0].style.display = "none";		
             bars[i].onmouseover = function(){
                 // console.log(Number(this.dataset["index"]));
                 //this.getElementsByTagName("div")[0].getElementsByTagName("ul")[0].style.left = "240px";
@@ -589,30 +581,26 @@
                 this.getElementsByTagName("div")[0].style.display = "block";
 				this.getElementsByTagName("div")[0].style.animation = "subcate-appear 0.7s";
 				this.getElementsByTagName("div")[0].style.boxShadow = "4px 4px 1px 1px rgba(0,0,0,0.16)";
-            }
-                
+            }            
             bars[i].onmouseout = function(){
                 //this.getElementsByTagName("div")[0].getElementsByTagName("ul")[0].style.left = "9999px";
                 this.getElementsByTagName("div")[0].style.left = "9999px";
                 //this.getElementsByTagName("div")[0].getElementsByTagName("ul")[0].style.display = "none";
                 this.getElementsByTagName("div")[0].style.display = "none";
                 //bars[i].getElementsByTagName("div")[0].getElementsByTagName("ul")[0].innerHTML = "";
-				this.getElementsByTagName("div")[0].style.boxShadow = "none";
-				
+				this.getElementsByTagName("div")[0].style.boxShadow = "none";			
             }
 			//bars[i].getElementsByTagName("div")[0].getElementsByTagName("ul")[0].style.left = "9999px";
             //bars[i].getElementsByTagName("div")[0].getElementsByTagName("ul")[0].style.display = "none";
 			bars[i].getElementsByTagName("div")[0].style.height = "510px";
-        }	
-        
+        }	      
         //to cart
         function tocart(){
             window.location.href="cart.html";
         }
         // show brands
         var b = document.getElementById("brand-row");
-        // var bs = b.getElementsByClassName("brand-img");
-        
+        // var bs = b.getElementsByClassName("brand-img");     
     </script>
     <div id="footer-container">
         <div id="footer-wrapper">
@@ -656,13 +644,9 @@
                         <a href="#"><i class="fa fa-skype yellow-l" aria-hidden="true"></i></a>
                         <a href="#"><i class="fa fa-facebook yellow-l" aria-hidden="true"></i></a>
                         <a href="#"><i class="fa fa-linkedin yellow-l" aria-hidden="true"></i></a>
-
                     </li>
-                    
-                    
                 </ul>
             </div>
-            
         </div>
     </div>
 </html>
