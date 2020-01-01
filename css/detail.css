@@ -25,23 +25,133 @@
 }
 
 #btm-left-container {
+  
   width: 300px;
   min-height: 400px;
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
+  border-right: solid 1px rgba(0, 0, 0, 0.16);
 }
 #cover {
   background-size: cover;
   background-repeat: no-repeat;
   margin: auto;
+  margin-top: 20px;
   width: 260px;
   height: 320px;
   background-image: url(../images/items/41WXuZKZuzL._AC_UY218_ML3_.jpg);
   box-shadow: 0 0 6px 6px rgba(0, 0, 0, 0.185);
 }
 #book-serials{
+  margin-top: 20px;
   margin-left: 20px;
 }
-#share {
+#shares {
+  margin-top: 10px;
   margin-left: 20px;
+  font-size: 22px;
+  
+}
+#shares > span {
+  font-size: 20px;
+  color: #818181;
+  margin-right: 5px;
+}
+#shares > a{
+  margin-right: 5px;
+}
+#btm-right-container {
+  float: right;
+  width: calc(100% - 380px);
+  margin-top: 20px;
+  margin-right: 60px;
+  min-height: 400px;
+  /* background-color: #aaa; */
+}
+#descri {
+  width: 100%;
+  
+}
+#descri-title {
+  font-size: 30px;
+  font-weight: bold;
+  color: #818181;
+}
+#descri-content {
+  font-size: 15px;
+  color: #aaa;
+}
+#detail-price {
+  display: inline-block;
+  font-size: 30px;
+  font-weight: bold;
+  color: rgb(255, 127, 42);
+  margin-top: 100px;
+  margin-left: 10px;
+}
+.amount {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  width: 160px;
+  text-align: center;
+  height: 100%;
+  margin: auto;
+  margin-top: 10px;
+  font-size: 30px;
+  font-weight: 600;
+  /* margin-left: 40px; */
+  /* avoid selected */
+  user-select: none;
+}
+.bt {
+  display: inline-block;
+  font-size: 30px;
+  font-weight: 800;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  background-color: #FECD85;
+  color: white;
+  transition: all 0.5s;
+  text-align: center;
+  /* vertical-align: middle; */
+  margin: 10px;
+}
+.bt:hover {
+  cursor: pointer;
+  background-color: rgb(255, 220, 167);
+}
+.cart-amount {
+  display: inline-block;
+}
+
+#addtocart, #buynow {
+  display: inline-block;
+  width: 130px;
+  height: 40px;
+  margin-top: 30px;
+  margin-left: 10px;
+  margin-right: 20px;
+  line-height: 40px;
+  font-weight: bold;
+  text-align: center;
+  background-color: #FECD85;
+  color: white;
+  border-radius: 5px;
+  transition: all 0.3s;
+  user-select: none;
+}
+#buynow {
+  background-color: rgb(255, 116, 61);
+}
+
+#addtocart:hover {
+  cursor: pointer;
+  background-color: rgb(255, 219, 164);
+}
+
+#buynow:hover {
+  cursor: pointer;
+  background-color: rgb(255, 154, 115);
 }

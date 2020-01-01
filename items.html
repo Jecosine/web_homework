@@ -281,6 +281,9 @@
                 '</div>'+
               '</div>';
         t.classList.add("item-container");
+        t.onclick=function(){
+          window.location.href="detail.html?index="+this.getElementsByClassName("item-wrap")[0].dataset["id"];
+        }
         t.title = "Drag me to cart!";
         // t.draggable = true;
         // var t = document.getElementById("test");

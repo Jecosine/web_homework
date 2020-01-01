@@ -66,13 +66,24 @@
                       <p><b>ISBN-13: </b>978-1491937990</p>
                       <p><b>ISBN-10: </b>1491937998</p>
                     </div>
-                    <div id="shares"></div>
+                    <div id="shares">
+                      <span>Share to: </span>
+                        <a><i class="fa fa-envelope" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-skype" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                    </div>
                   </div>
                   <div id="btm-right-container">
-                    <div id="descri"></div>
+                    <div id="descri">
+                      <div id="descri-title">Description</div>
+                      <div id="descri-content">Dr. Adrian Kaehler is a senior scientist at Applied Minds Corporation. His current research includes topics in machine learning, statistical modeling, computer vision and robotics. Adrian received his Ph.D. in Theoretical Physics from Columbia university in 1998. Adrian has since held positions at Intel Corporation and the Stanford University AI Lab, and was a member of the winning Stanley race team in the DARPA Grand Challenge. He has a variety of published papers and patents in physics, electrical engineering, computer science, and robotics.</div>
+                    </div>
+                    <div id="detail-price">$99.00</div>
                     <div id="cart-btn-grp">
-                      <div class="amount"></div>
-                      <div id="addtocart"></div>
+                        <div class="amount"><div class="minor bt">-</div><div class="cart-amount">1</div><div class="plus bt">+</div></div>
+                      <br><div id="addtocart">Add to Cart</div><div id="buynow">Buy Now</div>
                     </div>
                   </div>
                 </div>
@@ -146,7 +157,14 @@ function getSearchString(key, Url) {
 }
 var search = window.location.search;
 var id = getSearchString("index",search);
-
-
+window.onload = function(){
+// get data
+var data=itemsdata["dt"]
+var cur = data[parseInt(id)];
+var cont = document.getElementById("content");
+document.getElementById("item-big-title").innerHTML = cur["title"];
+document.getElementById("cover").style.backgroundImage="url(./images/items/"+ cur["imurl"] +")";
+document.getElementById("detail-price").innerHTML="$"+cur["price"];
+}
 
 </script>
