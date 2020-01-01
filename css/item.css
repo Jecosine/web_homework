@@ -13,6 +13,7 @@ a {
 }
 .item-container:hover {
     box-shadow: 4px 4px 1px rgba(0,0,0,0.16);
+    cursor: pointer;
 }
 .item-wrap {
     position: relative;
@@ -61,6 +62,13 @@ a {
 .item-sells {
     float: right;
     display: inline-block;
+    font-size: 12px;
+    color: gray;
+}
+.item-price {
+    color: rgb(255, 127, 42);
+    font-weight: bold;
+
 }
 #main-container {
     overflow: visible;

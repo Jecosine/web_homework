@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/detail.css" />
+        <link rel="stylesheet" href="css/font-awesome.min.css" />
+        <script type="text/javascript" src="items.js"></script>
+        <!-- <script type="text/javascript" src="js/slider.js" ></script> -->
+        <title>banAna: Your wise choice</title>
+        
+    </head>
+    <body>
+        <div id="navigation-container">
+            <div id="navigation-wrap">
+                <div id="icon-container" onclick="window.location.href='index.html'"></div>
+                <div id="search-container">
+                    <div id="cate-container">
+                            <div>Search <i class="fa fa-search" aria-hidden="true"></i></div>
+                        <!-- <ul id="cate-list">
+                            <li></li>
+                        </ul> -->
+                    </div>
+                    <div id="search-bar-bg">
+                        <form action="items.html" method="GET">
+                            <input id="search-bar" type="text" name="search" placeholder="Search..."/>
+                            <button id="submit-button" type="submit"><div>Search <i class="fa fa-search" aria-hidden="true"></i></div></button>
+                        </form>
+                    </div>
+                </div>
+                <a href="#" id="cart">
+                    <div class="cart-icon" onclick="window.location.href='cart.html'"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart</div>
+                    <div id="cart-items">
+                        <div id="cart-items-container"></div>
+                        <!-- <div class="cit">
+                            <div class="thumb"></div>
+                            <div class="cart-info-right">
+                                <div class="cart-title">Building Computer V</div>
+                                <div class="cart-price">$66.52</div>
+                            </div>
+                        </div> -->
+                        <div onclick="tocart()" id="checkout">Check Out</div>
+                    </div>
+                    
+
+                </a>
+            </div>
+            <div id="sub-navi">
+                <div id="subnavi-g">
+                    <a class="subnavi-item" href="#">Best Sellers</a>
+                    <a class="subnavi-item" href="#">Ranks</a>
+                    <a class="subnavi-item" href="#">Recommendations</a>
+                    <a class="subnavi-item" href="#">New Releases</a>
+                    <a class="subnavi-item" href="#">Gift Cards</a>
+                </div>
+            </div>ss
+        </div>
+        <div id="main-container">
+            <div id="main-wrap">
+              <div id="content">
+                <div id="item-big-title">Learning OpenCV 3: Computer Vision in C++ with the OpenCV Library 1st Edition</div>
+                <div id="author">by Adrian Kaehler  (Author), Gary Bradski (Author)</div>
+                <div id="btm-container">
+                  <div id="btm-left-container">
+                    <div id="cover"></div>
+                    <div id="book-serials">
+                      <p><b>ISBN-13: </b>978-1491937990</p>
+                      <p><b>ISBN-10: </b>1491937998</p>
+                    </div>
+                    <div id="shares"></div>
+                  </div>
+                  <div id="btm-right-container">
+                    <div id="descri"></div>
+                    <div id="cart-btn-grp">
+                      <div class="amount"></div>
+                      <div id="addtocart"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div id="footer-container">
+            <div id="footer-wrapper">
+                <div id="about-us" class="footer-col">
+                    <div class="footer-title">About Us</div>
+                    <ul class="footer-ul">
+                        <li class="footer-li"><a href="#">Customer Service</a></li>
+                        <li class="footer-li"><a href="#">Advanced Search</a></li>
+                        <li class="footer-li"><a href="#">Order and Returns</a></li>
+                        <li class="footer-li"><a href="#">Contact Us</a></li>
+                    </ul>
+                    
+                </div>
+                <div id="policy" class="footer-col">
+                    <div class="footer-title">Policy</div>
+                    <ul class="footer-ul">
+                        <li class="footer-li"><a href="#">Privacy Policy</a></li>
+                        <li class="footer-li"><a href="#">Site Map</a></li>
+                        <li class="footer-li"><a href="#">Search Term</a></li>
+                        <li class="footer-li"><a href="#">Customer Service</a></li>
+                    </ul>
+                    
+                </div>
+                <div id="account" class="footer-col">
+                    <div class="footer-title">Account</div>
+                    <ul class="footer-ul">
+                        <li class="footer-li"><a href="#">Sign In</a></li>
+                        <li class="footer-li"><a href="#">Sign Up</a></li>
+                        <li class="footer-li"><a href="#">View Cart</a></li>
+                        <li class="footer-li"><a href="#">Help</a></li>
+                    </ul>
+                    
+                </div>
+                <div id="contact" class="footer-col">
+                    <div class="footer-title">Contact</div>
+                    <ul class="footer-ul">
+                        <li class="footer-li"><a href="#"><i class="fa fa-envelope yellow" aria-hidden="true"></i>  Email: jecosine@outlook.com</a></li>
+                        <li class="footer-li"><a href="#"><a href="#"><i class="fa fa-phone yellow" aria-hidden="true"></i> Tele: 123-45678901</a></li>
+                        <li class="footer-li"><a href="#">
+                            <a href="#"><i class="fa fa-twitter yellow-l" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-skype yellow-l" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-facebook yellow-l" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-linkedin yellow-l" aria-hidden="true"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+      </body>
+    </html>
+
+
+
+
+<script>
+function getSearchString(key, Url) {
+    var str = Url;
+    str = str.substring(1, str.length);
+    var arr = str.split("&");
+    var obj = new Object();
+    for (var i = 0; i < arr.length; i++) {
+        var tmp_arr = arr[i].split("=");
+        obj[decodeURIComponent(tmp_arr[0])] = decodeURIComponent(tmp_arr[1]);
+    }
+    return obj[key];
+}
+var search = window.location.search;
+var id = getSearchString("index",search);
+
+
+
+</script>

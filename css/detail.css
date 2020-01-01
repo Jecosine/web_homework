@@ -1,0 +1,47 @@
+#main-wrap {
+  min-height: 600px;
+  background-color: rgba(255, 255, 255, 0.884);
+}
+#content {
+  position: relative;
+  width: calc(100% - 40px);
+  margin-left: 20px;
+
+}
+#item-big-title {
+  position: relative;
+  font-size: 30px;
+  font-weight: bold;
+  color: #353535;
+  margin-top: 20px;
+}
+#author {
+  position: relative;
+  width: calc(100% - 20px);
+  padding-bottom: 20px;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.16);
+  font-size: 20px;
+  color: #818181;
+}
+
+#btm-left-container {
+  width: 300px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+}
+#cover {
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: auto;
+  width: 260px;
+  height: 320px;
+  background-image: url(../images/items/41WXuZKZuzL._AC_UY218_ML3_.jpg);
+  box-shadow: 0 0 6px 6px rgba(0, 0, 0, 0.185);
+}
+#book-serials{
+  margin-left: 20px;
+}
+#share {
+  margin-left: 20px;
+}

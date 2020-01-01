@@ -616,6 +616,7 @@ div.indi:hover {
 .user-avatar {
     width: 80px;
     height: 80px;
+    border-radius: 50%;
     background-image: url(../images/usericon@2x.png);
     background-repeat: no-repeat;
     background-size: contain;
@@ -852,4 +853,9 @@ i.yellow-l {
     line-height: 40px;
     margin-right: 10px;
     font-size: 25px;
+}
+
+::selection {
+    background-color: #FECD85;
+    color: white;
 }

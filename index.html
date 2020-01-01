@@ -466,8 +466,8 @@
                         <div id="ruser-info">
                             <a class="user-avatar" href="#"></a>
                             <div id="rlogin">
-                                <a href="login">Login</a>
-                                <a href="regist">regist</a>
+                                <a href="login.html">Login</a>
+                                <a href="login.html">regist</a>
                             </div>
                         </div>
                         <div id="right-reco">
@@ -595,6 +595,27 @@
             </div>
     </body>
     <script>
+        //deal login
+        var avatar = document.getElementsByClassName("user-avatar")[0];
+        var rlogin = document.getElementById("rlogin");
+        var info = localStorage.getItem("userInfo");
+        if (info!=null){
+            info = JSON.parse(info);
+            rlogin.innerHTML="";
+            avatar.style.backgroundImage="url("+info["pic"]+")";
+            var uname = document.createElement("a");
+            uname.innerHTML = info["name"];
+            uname.style.color="rgb(255, 160, 17)";
+            var logout = document.createElement("a");
+            logout.innerHTML="Logout";
+            logout.setAttribute("href","#");
+            logout.onclick=function(){
+                localStorage.removeItem("userInfo");
+                window.location.href="index.html";
+            }
+            rlogin.appendChild(uname);
+            rlogin.appendChild(logout);
+        }
         // load brand
         var brands = document.getElementsByClassName("brand-img");
         for (var i = 0;i < 12;i++){
