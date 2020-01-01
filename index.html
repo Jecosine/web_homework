@@ -10,7 +10,7 @@
     <body>
         <div id="navigation-container">
             <div id="navigation-wrap">
-                <div id="icon-container"></div>
+                <div id="icon-container" onclick="window.location.href='index.html'"></div>
                 <div id="search-container">
                     <div id="cate-container">
                             <div>Search <i class="fa fa-search" aria-hidden="true"></i></div>
@@ -19,7 +19,7 @@
                         </ul> -->
                     </div>
                     <div id="search-bar-bg">
-                        <form action="banana.jsp" method="GET">
+                        <form action="banana.php" method="GET">
                             <input id="search-bar" type="text" name="search" placeholder="Search..."/>
                             <button id="submit-button" type="submit"><div>Search <i class="fa fa-search" aria-hidden="true"></i></div></button>
                         </form>
@@ -548,6 +548,13 @@
         
     </body>
     <script>
+        // load brand
+        var brands = document.getElementsByClassName("brand-img");
+        for (var i = 0;i < 12;i++){
+            brands[i].setAttribute("src","")
+        }
+
+
         var itemslist = itemsdata['dt'];        
         // load cart
         var s = localStorage.getItem("cart");

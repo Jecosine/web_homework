@@ -118,6 +118,9 @@ form {
     background-repeat: no-repeat;
     background-position: 50%;
 }
+#icon-container:hover {
+    cursor: pointer;
+}
 #cate-container {
     display: inline-block;
     position: absolute;
