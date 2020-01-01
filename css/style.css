@@ -724,13 +724,18 @@ div.indi:hover {
     flex: 1;
     display: inline-block;    
     width: 192px;
-    height: 80px;    
+    height: 80px;  
+    transition: inlarger 0.5s; 
+}
+.brand-img:hover > div {
+    
 }
 .brand-img > div {
     background-image: url(../images/brand/1.webp);
     width: 192px;
     height: 80px;
 }
+
 /* recommendations */
 #reco {
     position: relative;

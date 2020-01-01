@@ -551,7 +551,7 @@
         // load brand
         var brands = document.getElementsByClassName("brand-img");
         for (var i = 0;i < 12;i++){
-            brands[i].setAttribute("src","")
+            brands[i].getElementsByTagName("div")[0].setAttribute("style","background:url(./images/brand/"+(i+1)+".webp)");
         }
 
 
