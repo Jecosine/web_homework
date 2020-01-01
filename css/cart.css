@@ -1,8 +1,9 @@
 #main-container {
-  z-index: 999;
+  
 }
 #main-wrap {
   overflow: visible;
+  z-index: 999;
 }
 #main-wrapper {
   width: 100%;
@@ -38,7 +39,32 @@
   margin-left: -200px;
   width: 200px;
   height: 300px;
-  background-color: #FECD85;
+  background-color: rgba(255, 94, 73, 0.452);
+}
+.dst > i {
+  display: block;
+  width: 70px;
+  height: 70px;
+  margin: auto;
+  line-height: 70px;
+  margin-top: 120px;
+  font-size: 50px;
+  text-align: center;
+  color: rgba(255, 215, 215, 0.842);
+  background-color: rgba(255, 70, 37, 0.842);
+  border-radius: 50%;
+  
+}
+@keyframes jump {
+  0% {
+      margin-top: 120px;
+  }
+  50% {
+      margin-top: 100px;
+  }
+  100% {
+      margin-top: 120px;
+  }
 }
 .cart-item-main:hover {
   box-shadow: 4px 4px 6px  rgba(0, 0, 0, 0.253);
@@ -172,7 +198,7 @@
   transition: all 0.5s;
 }
 #clear:hover {
-  background-color: rgb(248, 148, 148);
+  background-color: rgba(255, 66, 66, 0.705);
   cursor: pointer;
 }
 #confirmpay:hover {

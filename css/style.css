@@ -191,7 +191,7 @@ form {
     max-height: 480px;
     /* transform: skewX(25deg); */
     background-color: #fdfdfd;
-    z-index: 999;
+    z-index: 9999;
     opacity: 0.6;
     
     box-shadow: 4px 4px 4px rgba(0,0,0,0.16);
@@ -262,6 +262,7 @@ form {
     margin: auto;
     margin-left: 10px;
     background-size: cover;
+    background-repeat: no-repeat;
     /* background-color: #767676; */
 }
 .cart-info-right {
