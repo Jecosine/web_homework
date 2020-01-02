@@ -7,6 +7,7 @@
         <script type="text/javascript" src="items.js"></script>
         <!-- <script type="text/javascript" src="js/slider.js" ></script> -->
         <title>banAna: Your wise choice</title>
+        <link rel="short-cut icon" href="favicon.ico" />
         
     </head>
     <body>
@@ -144,6 +145,7 @@
 
 
 <script>
+
 function getSearchString(key, Url) {
     var str = Url;
     str = str.substring(1, str.length);
@@ -153,6 +155,7 @@ function getSearchString(key, Url) {
         var tmp_arr = arr[i].split("=");
         obj[decodeURIComponent(tmp_arr[0])] = decodeURIComponent(tmp_arr[1]);
     }
+
     return obj[key];
 }
 var search = window.location.search;
@@ -163,6 +166,7 @@ var data=itemsdata["dt"]
 var cur = data[parseInt(id)];
 var cont = document.getElementById("content");
 document.getElementById("item-big-title").innerHTML = cur["title"];
+document.title = cur["title"];
 document.getElementById("cover").style.backgroundImage="url(./images/items/"+ cur["imurl"] +")";
 document.getElementById("detail-price").innerHTML="$"+cur["price"];
 }

@@ -5,6 +5,8 @@
     <link rel="stylesheet" href="css/item.css" />
     <link rel="stylesheet" href="css/font-awesome.min.css" />
     <script type="text/javascript" src="items.js"></script>
+    <link rel="short-cut icon" href="favicon.ico" />
+    <title>Items List:  banAna.com</title>
   </head>
   <body>
     <div id="navigation-container">
@@ -52,6 +54,7 @@
       </div>
     </div>
     <div id="main-container">
+      <div id="totop"><i class="fa fa-caret-up" aria-hidden="true"></i></div>
       <div id="main-wrap">       
         <div id="main-wrapper">
           <div id="filter"></div>
@@ -248,6 +251,28 @@
     </div>
   </body>
   <script>
+    // back to top
+    var totop = document.getElementById("totop");
+    window.onscroll = function(){
+      var t = document.documentElement.scrollTop || document.body.scrollTop;
+      if (t > 100) {
+        totop.style.animation = "ap-totop 0.5s";
+        totop.style.display = "block";
+      }
+      if (t <= 100) {
+        totop.style.display = "none";
+      }
+    }    
+    totop.onclick = function () {
+      var t = document.documentElement.scrollTop || document.body.scrollTop;
+      if (t > 100) {
+        window.scroll({
+          top:0,
+          left: 0,
+          behavior: 'smooth'
+        })
+      }
+    }
     var itemslist = itemsdata['dt'];
     // load cart
     var s = localStorage.getItem("cart");

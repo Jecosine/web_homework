@@ -1,11 +1,12 @@
 #main-wrap {
-  min-height: 600px;
+  min-height: 813px;
   background-color: rgba(255, 255, 255, 0.884);
 }
 #content {
   position: relative;
   width: calc(100% - 40px);
   margin-left: 20px;
+  margin-top: 60px;
 
 }
 #item-big-title {

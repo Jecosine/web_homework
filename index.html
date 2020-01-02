@@ -6,7 +6,7 @@
         <script type="text/javascript" src="items.js"></script>
         <script type="text/javascript" src="js/slider.js" ></script>
         <title>banAna: Your wise choice</title>
-        
+        <link rel="short-cut icon" href="favicon.ico" />
     </head>
     <body>
         <div id="navigation-container">
@@ -54,6 +54,7 @@
             </div>ss
         </div>
         <div id="main-container">
+                <div id="totop"><i class="fa fa-caret-up" aria-hidden="true"></i></div>
             <div id="main-wrap">
                 <div id="bg-container">
                     <div id="main-bg">
@@ -595,6 +596,28 @@
             </div>
     </body>
     <script>
+        // back to top
+        var totop = document.getElementById("totop");
+        window.onscroll = function(){
+            var t = document.documentElement.scrollTop || document.body.scrollTop;
+            if (t > 100) {
+                totop.style.animation = "ap-totop 0.5s";
+                totop.style.display = "block";
+            }
+            if (t <= 100) {
+                totop.style.display = "none";
+            }
+        }    
+        totop.onclick = function () {
+            var t = document.documentElement.scrollTop || document.body.scrollTop;
+            if (t > 100) {
+                window.scroll({
+                    top:0,
+                    left: 0,
+                    behavior: 'smooth'
+                })
+            }
+        }
         //deal login
         var avatar = document.getElementsByClassName("user-avatar")[0];
         var rlogin = document.getElementById("rlogin");
